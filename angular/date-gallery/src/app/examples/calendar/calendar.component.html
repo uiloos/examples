@@ -1,0 +1,101 @@
+<div class="calendar-example">
+    <event-form
+      *ngIf="showForm"
+      [formEvent]="formEvent"
+      [formDate]="formDate"
+      (close)="closeEventForm()"
+      [dateGallery]="dateGallery"
+    />
+  
+    <div class="calender-topbar">
+      <div class="calendar-mode">
+        <button
+          *ngFor="let content of modeSegmentedButton.contents"
+          (click)="activateMode(content.value.mode)"
+          [ngClass]="{ active: content.isActive }"
+        >
+          {{ content.value.label }}
+        </button>
+      </div>
+  
+      <div class="calendar-controls">
+        <button
+          class="calendar-previous calendar-button"
+          (click)=" dateGallery.previous()"
+        >
+          previous
+        </button>
+  
+        <span class="calendar-title">
+           <month-calendar-title
+            *ngIf="dateGallery.mode === 'month-six-weeks'"
+            [dateGallery]="dateGallery"
+          />
+          <year-calendar-title
+            *ngIf="dateGallery.mode === 'month'"
+            [dateGallery]="dateGallery"
+          />
+          <week-calendar-title
+            *ngIf="dateGallery.mode === 'week'"
+            [dateGallery]="dateGallery"
+          />
+          <day-calendar-title
+            *ngIf="dateGallery.mode === 'day'"
+            [dateGallery]="dateGallery"
+          />
+        </span>
+  
+        <button
+          class="calendar-next calendar-button"
+          (click)="dateGallery.next()"
+        >
+          next
+        </button>
+      </div>
+  
+      <div class="calendar-actions">
+        <button
+          class="calendar-today calendar-button"
+          (click)="dateGallery.today()"
+        >
+          today
+        </button>
+  
+        <button
+          class="calendar-add-event calendar-button"
+          (click)="openNewEventForm()"
+        >
+          + add event
+        </button>
+      </div>
+    </div>
+  
+    <div class="calendar-wrapper">
+     <month-calendar
+        *ngIf="dateGallery.mode === 'month-six-weeks'"
+        [dateGallery]="dateGallery"
+        (openNewEventForm)="openNewEventForm($event)"
+        (openEditEventForm)="openEditEventForm($event)"
+      />
+  
+      <year-calendar
+        *ngIf="dateGallery.mode === 'month'"
+        [dateGallery]="dateGallery"
+      />
+  `
+      <week-calendar
+        *ngIf="dateGallery.mode === 'week'"
+        [dateGallery]="dateGallery"
+        (openNewEventForm)="openNewEventForm($event)"
+        (openEditEventForm)="openEditEventForm($event)"
+      />
+  
+      <day-calendar
+      *ngIf="dateGallery.mode === 'day'"
+        [dateGallery]="dateGallery"
+        (openNewEventForm)="openNewEventForm($event)"
+        (openEditEventForm)="openEditEventForm($event)"
+      />
+    </div>
+</div>
+  

@@ -1,0 +1,51 @@
+<div class="daterangepicker">
+    <label>
+      {{ startLabel }}:
+      <datepicker
+        [value]="start"
+        (valueChange)="setStart($event)"
+        (validityChanged)="onStartValidityChanged($event)"
+        [timeEnabled]="timeEnabled"
+        [label]="startErrorLabel"
+        [min]="min"
+        [max]="max"
+        [required]="required"
+        (openDialog)="openDialog()"
+        [linkedPicker]="{
+          label: endErrorLabel,
+          value: end,
+          myPosition: 'start',
+        }"
+      />
+    </label>
+
+    <label>
+      {{ endLabel }}:
+      <datepicker
+        [value]="end"
+        (valueChange)="setEnd($event)"
+        (validityChanged)="onEndValidityChanged($event)"
+        [timeEnabled]="timeEnabled"
+        [label]="endErrorLabel"
+        [min]="min"
+        [max]="max"
+        [required]="required"
+        (openDialog)="openDialog()"
+        [linkedPicker]="{
+          label: startErrorLabel,
+          value: start,
+          myPosition: 'end',
+        }"
+      />
+    </label>
+
+    <daterange-picker-dialog
+      *ngIf="showDialog"
+      [startDate]="start"
+      [endDate]="end"
+      (rangeChanged)="rangeChanged($event)"
+      (close)="closeDialog()"
+      [min]="minDate ?? undefined"
+      [max]="maxDate ?? undefined"
+    />
+  </div>

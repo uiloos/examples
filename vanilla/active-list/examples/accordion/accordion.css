@@ -1,0 +1,35 @@
+.accordion-example {
+  margin-bottom: 16px;
+  max-width: 640px;
+}
+
+.accordion-example details {
+  margin: 16px 0px;
+}
+
+.accordion-example summary {
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-example details[open] summary {
+  color: #6b21a8;
+}
+
+.accordion-example details summary::before {
+  margin-right: 8px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.accordion-example details[open] summary::before {
+  content: "-";
+}
+
+.accordion-example details summary::before {
+  content: "+";
+}
+
+.accordion-example p {
+  margin-left: 20px;
+}

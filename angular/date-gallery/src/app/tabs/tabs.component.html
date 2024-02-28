@@ -1,0 +1,16 @@
+<div class="tabs">
+    <div class="tabs-container">
+      <a
+        *ngFor="let content of tabsService?.tabs?.contents"
+        :key="content.value.href"
+        [href]="content.value.href"
+        (click)="content.activate()"
+        class="tab"
+        [class]="{ active: content.isActive }"
+      >
+        {{ content.value.name }}
+      </a>
+    </div>
+
+    <ng-content />
+  </div>

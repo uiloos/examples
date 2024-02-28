@@ -1,0 +1,24 @@
+.gallery-example {
+  width: 512px;
+  overflow-x: hidden;
+}
+
+.gallery-example,
+.gallery-selected {
+  margin-bottom: 16px;
+  width: 512px;
+}
+
+.gallery-example ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.gallery-example .gallery-items button {
+  cursor: pointer;
+}
+
+.gallery-example img {
+  max-width: 100%;
+  height: auto;
+}

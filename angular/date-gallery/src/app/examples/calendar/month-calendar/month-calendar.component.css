@@ -1,0 +1,50 @@
+.calendar-month-daynames {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(32px, 1fr));
+  gap: 2px;
+}
+
+.calendar-month-dayname {
+  display: grid;
+  place-content: center;
+  height: 100px;
+  font-size: 22px;
+}
+
+.calendar-month-daycells {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(32px, 1fr));
+  gap: 0;
+  list-style-type: none;
+}
+
+.calendar-month-daycell {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  box-shadow: 0 0 0 1px black;
+  min-height: 120px;
+  font-size: 22px;
+  background-color: white;
+  cursor: pointer;
+  padding-bottom: 8px;
+}
+
+.calendar-month-daycell.padding {
+  color: gray;
+}
+
+.calendar-month-daycell-number {
+  padding: 4px;
+  justify-self: right;
+  background-color: white;
+  font-size: 22px;
+  color: inherit;
+}
+
+.calendar-month-daycell-events {
+  display: grid;
+  grid-template-rows: 32px;
+  gap: 4px;
+  height: 100%;
+}

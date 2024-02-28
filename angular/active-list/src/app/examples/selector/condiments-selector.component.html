@@ -1,0 +1,24 @@
+<h2>You have selected {{ condimentsList.activeContents.length }} condiments</h2>
+
+<div class="condiments">
+  <condiment
+    *ngFor="let content of condimentsList.activeContents"
+    [content]="content"
+  />
+</div>
+
+<h2>Please select up to three condiments</h2>
+
+<span class="error">
+  {{ condimentsList.active.length === 3 ? "You have selected the max number of
+  condiments" : "" }}
+</span>
+
+<div class="condiments">
+  <condiment
+    *ngFor="let content of condimentsList.contents"
+    [content]="content"
+  />
+</div>
+
+<h2>Cost: {{ cost() }}</h2>

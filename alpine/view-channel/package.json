@@ -1,0 +1,13 @@
+{
+  "name": "alpine-view-channel",
+  "version": "0.0.0",
+  "main": "index.html",
+  "private": true,
+  "scripts": {
+    "start": "serve",
+    "test": "echo done"
+  },
+  "devDependencies": {
+    "serve": "14.2.1"
+  }
+}

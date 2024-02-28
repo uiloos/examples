@@ -1,0 +1,28 @@
+{
+  "name": "react-date-gallery",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@uiloos/core": "1.6.0",
+    "@uiloos/react": "1.6.0",
+    "classnames": "2.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "date-fns": "3.3.1"
+  },
+  "devDependencies": {
+    "@babel/runtime": "7.23.9",
+    "@types/react": "18.2.60",
+    "@types/react-dom": "18.2.19",
+    "typescript": "5.3.3",
+    "vite": "5.1.4",
+    "@vitejs/plugin-react": "4.2.1"
+  },
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "test": "tsc --version && tsc --noEmit && vite build",
+    "preview": "vite preview"
+  }
+}

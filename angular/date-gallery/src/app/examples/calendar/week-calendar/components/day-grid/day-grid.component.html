@@ -1,0 +1,11 @@
+
+<ng-template #template>
+  <ul
+    attr.data-date="{{date.getTime()}}"
+    class="calendar-week-day-grid"
+    [ngStyle]="{ 'gridColumn': gridColumn }"
+    (click)="onClick($event)"
+  >
+    <ng-content></ng-content>
+  </ul>
+</ng-template>

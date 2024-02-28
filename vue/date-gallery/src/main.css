@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+::backdrop {
+  background-color: gray;
+  opacity: 0.6;
+}
+
+dialog[open] {
+  margin: auto;
+  padding: 8px;
+  width: 100%;
+  max-width: 360px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.description {
+  margin: 16px auto 0 auto;
+  border-top: 1px solid black;
+  padding-top: 16px;
+  max-width: 512px;
+}
+
+.description p {
+  line-height: 1.2rem;
+  margin: 16px 0;
+}
+
+.center {
+  display: grid;
+  place-content: center;
+}

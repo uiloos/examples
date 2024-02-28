@@ -1,0 +1,52 @@
+<ng-template #template>
+  <li
+    #eventRef
+    class="calendar-week-event"
+    [ngStyle]="{
+      'background-color': event.data.color,
+      'gridColumn': gridColumn,
+      'gridRow': gridRow,
+    }"
+    (click)="onClick($event)"
+    [draggable]="event.spansMultipleDays === false"
+    (dragstart)="onDragStart($event)"
+  >
+    <button
+      [ngStyle]="{
+        'background-color': event.data.color,
+        color: yiq(event.data.color),
+      }"
+      attr.aria-label="{{ ariaLabelForEvent(event) }}"
+    >
+      <span
+        #startDragRef
+        class="drag-indicator"
+        [draggable]="startDraggable"
+        (dragstart)="onDragStart($event)"
+        (drag)="onDrag($event)"
+      ></span>
+
+      <span class="text-container">
+        <span class="inner-text-container">
+          <b *ngIf="showStartTime">{{
+            timeFormatter.format(event.startDate)
+          }}</b>
+          <i [title]="event.data.title">{{ event.data.title }}</i>
+          <span>{{ event.data.description }}</span>
+        </span>
+
+        <b *ngIf="showEndTime" class="end-time">{{
+          timeFormatter.format(event.endDate)
+        }}</b>
+      </span>
+
+      <span
+        #endDragRef
+        class="drag-indicator"
+        [draggable]="endDraggable"
+        (dragstart)="onDragStart($event)"
+        (drag)="onDrag($event)"
+      ></span>
+    </button>
+  </li>
+</ng-template>

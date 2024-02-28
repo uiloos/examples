@@ -1,0 +1,16 @@
+<div class="confirmation-dialog-backdrop" (click)="onCancelClicked()"></div>
+
+<div
+  class="confirmation-dialog"
+  role="dialog"
+  aria-label="Please confirm"
+  [attr.aria-describedby]="view.data.text"
+>
+  <strong>Please confirm</strong>
+  <p>{{ view.data.text }}</p>
+
+  <div class="confirmation-dialog-button-bar">
+    <button (click)="onOkClicked()">Ok</button>
+    <button (click)="onCancelClicked()">Cancel</button>
+  </div>
+</div>

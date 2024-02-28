@@ -1,0 +1,66 @@
+.calendar-example .calendar-year-months {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  width: calc(320px * 3);
+  margin: auto;
+}
+
+.calendar-example .calendar-year {
+  width: 320px;
+}
+
+.calendar-example .calendar-year-monthname {
+  width: 100%;
+  text-align: center;
+  padding: 16px 0px;
+  font-size: 22px;
+  background-color: white;
+}
+
+.calendar-example .calendar-year-daynames {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.calendar-example .calendar-year-dayname {
+  display: grid;
+  place-content: center;
+  height: 16px;
+  font-size: 22px;
+}
+
+.calendar-example .calendar-year-daycells {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0;
+}
+
+.calendar-example .calendar-year-daycell {
+  display: grid;
+  place-items: center;
+  height: 32px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.calendar-example .calendar-year-daycell .calendar-year-daycell-number {
+  background-color: white;
+}
+
+.calendar-example
+  .calendar-year-daycell.has-event
+  .calendar-year-daycell-number {
+  display: grid;
+  place-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 100%;
+  padding: 4px;
+  font-weight: bold;
+  width: 26px;
+  height: 26px;
+}

@@ -1,0 +1,10 @@
+.calendar-week {
+  /* Is set from within JavaScript based on the visible hours */
+  --height: 0;
+}
+
+.calendar-week-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(7, minmax(120px, 1fr));
+  grid-template-rows: 50px repeat(var(--height), 1px);
+}

@@ -1,0 +1,31 @@
+<div class="center">
+    <div id="vacationForm">
+      <span>Request vacation</span>
+  
+      <daterange-picker
+        [timeEnabled]="true"
+        [(start)]="startDate"
+        [(end)]="endDate"
+        (validityChanged)="vacationIsValidChanged($event)"
+        startLabel="From (mm/dd/yyyy)"
+        endLabel="Till (mm/dd/yyyy)"
+        startErrorLabel="From"
+        endErrorLabel="Till"
+        [required]="true"
+        min="yesterday"
+      />
+  
+      <p *ngIf="startDate && endDate && vacationIsValid">
+        Your vacation starts on: {{ startDate }} and ends on {{ endDate }}
+      </p>
+    </div>
+  </div>
+  
+  <div class="description">
+    <p>
+      The example above shows a date range picker component which is implemented
+      as a custom element which ties two datepickers from the "Datepicker" example
+      together.
+    </p>
+  </div>
+  

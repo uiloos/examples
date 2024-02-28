@@ -1,0 +1,32 @@
+<ng-template #template>
+  <li
+    class="calendar-month-event"
+    [ngClass]="{
+      multiple: event.spansMultipleDays,
+      'first-day-of-event':
+        event.spansMultipleDays &&
+        dateGallery.isSameDay(event.startDate, dateObj.date),
+    }"
+    [ngStyle]="{
+      'gridRow': gridRow,
+      'background-color': event.spansMultipleDays
+        ? event.data.color
+        : undefined,
+      '--color': event.data.color,
+    }"
+    draggable="true"
+    (dragstart)="onDragStart($event)"
+    (click)="onEventClicked($event)"
+  >
+    <button
+      class="calendar-month-event-wrapper"
+      [ngStyle]="{
+        color: event.spansMultipleDays ? yiq(event.data.color) : undefined,
+      }"
+      attr.aria-label="{{ariaLabelForEvent(event)}}"
+    >
+      <span class="calendar-month-event-title">{{ title }}</span>
+      <span class="calendar-month-event-time">{{ time }}</span>
+    </button>
+  </li>
+</ng-template>

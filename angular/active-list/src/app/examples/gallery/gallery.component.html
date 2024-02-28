@@ -1,0 +1,23 @@
+<div class="gallery-example">
+    <div class="gallery-selected">
+      <img
+        width="1920"
+        height="1280"
+        [src]="gallery.lastActivated?.src"
+        alt="{{gallery.lastActivated?.alt}}"
+      />
+    </div>
+
+    <ul class="gallery-items">
+      <li *ngFor="let content of gallery.contents">
+        <button (click)="content.activate()">
+          <img
+            width="1920"
+            height="1280"
+            [src]="content.value.src"
+            alt="{{content.value.alt}}"
+          />
+        </button>
+      </li>
+    </ul>
+  </div>

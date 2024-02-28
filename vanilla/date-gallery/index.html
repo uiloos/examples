@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="/main.css" />
+
+    <script
+      src="https://unpkg.com/@uiloos/core@1.6.0-alpha.8/dist/uiloos-license-checker-1.6.0-alpha.8.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/@uiloos/core@1.6.0-alpha.8/dist/uiloos-active-list-1.6.0-alpha.8.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://unpkg.com/@uiloos/core@1.6.0-alpha.8/dist/uiloos-date-gallery-1.6.0-alpha.8.min.js"
+      defer
+    ></script>
+
+    <link rel="stylesheet" href="/tabs/tabs.css" />
+    <script src="/tabs/tabs.js" defer></script>
+
+    <link rel="stylesheet" href="/examples/calendar/calendar.css" />
+    <script src="/examples/calendar/calendar.js" type="module"></script>
+
+    <link rel="stylesheet" href="/examples/datepicker/datepicker.css" />
+    <script src="/examples/datepicker/datepicker.js" type="module"></script>
+
+    <link
+      rel="stylesheet"
+      href="/examples/daterangepicker/daterangepicker.css"
+    />
+    <script
+      src="/examples/daterangepicker/daterangepicker.js"
+      type="module"
+    ></script>
+
+    <title>DateGallery vanilla</title>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tabs-container">
+        <a href="#calendar" class="tab active">Calendar</a>
+        <a href="#datepicker" class="tab active">Datepicker</a>
+        <a href="#daterangepicker" class="tab active">DateRangePicker</a>
+      </div>
+
+      <!-- Calendar-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <uiloos-calendar>Loading calendar...</uiloos-calendar>
+
+        <div class="description">
+          <p>
+            The example above shows a fully fledged calendar that supports year,
+            month week and day modes.
+          </p>
+          <p>
+            It also supports drag and drop for the events, plus resizing the
+            events on the day and week calendar.
+          </p>
+          <p>
+            The various calendars modes use CSS grids extensively to create the
+            layout for each mode.
+          </p>
+        </div>
+      </div>
+
+      <!-- Datepicker-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="center">
+          <form id="birthdayForm">
+            <label for="birthday"> Birthday (mm/dd/yyyy) </label>
+            <uiloos-datepicker
+              id="birthday"
+              name="birthday"
+              required
+              min="01/01/1900"
+              max="tomorrow"
+              label="Birthday"
+            >
+              Loading...
+            </uiloos-datepicker>
+
+            <label for="appointment"> Appointment (mm/dd/yyyy hh:mm) </label>
+            <uiloos-datepicker
+              id="appointment"
+              value="today"
+              name="appointment"
+              label="Appointment"
+              required
+              min="yesterday"
+              time
+            >
+              Loading...
+            </uiloos-datepicker>
+
+            <button type="submit">Submit</button>
+            <p id="datepickerMessage"></p>
+          </form>
+        </div>
+
+        <div class="description">
+          <p>
+            The example above shows a datepicker component which is implemented
+            as a custom element that integrates with regular HTML form elements.
+          </p>
+
+          <p>
+            It does this by creating a web component which has the
+            "formAssociated" static property set to true.
+          </p>
+
+          <p>
+            Tip: try entering "today" or "yesterday" or "tomorrow" in the 
+            inputs without the quotes!
+          </p>
+
+          <p>
+            Note: that the example loads `date-fns` from a CDN which can be a
+            little slow, install it via the `package.json` and use a bundler to
+            make this faster.
+          </p>
+        </div>
+      </div>
+
+      <!-- DateRangePicker-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="center">
+          <form id="vacationForm">
+            <span>Request vacation</span>
+
+            <uiloos-daterangepicker
+              time
+              start-value="01/01/2040 23:00"
+              end-value="01/07/2040 23:00"
+              start-name="startDate"
+              end-name="endDate"
+              start-label="From (mm/dd/yyyy)"
+              end-label="Till (mm/dd/yyyy)"
+              start-error-label="From"
+              end-error-label="Till"
+              required
+              min="yesterday"
+            >
+              Loading...
+            </uiloos-daterangepicker>
+
+            <button type="submit">Submit</button>
+            <p id="dateRangePickerMessage"></p>
+          </form>
+        </div>
+
+        <div class="description">
+          <p>
+            The example above shows a date range picker component which is
+            implemented as a custom element which ties two datepickers from the
+            "Datepicker" example together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

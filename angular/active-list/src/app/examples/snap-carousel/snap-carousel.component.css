@@ -1,0 +1,35 @@
+.snap-carousel {
+  display: flex;
+  gap: 8px;
+  width: 512px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  list-style-type: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.snap-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-carousel .slide {
+  /* Slide is full width */
+  min-width: 512px;
+  scroll-snap-align: center;
+}
+
+.snap-carousel .slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+.snap-carousel article {
+  padding: 12px 0px;
+}
+
+.snap-carousel article h4 {
+  margin-bottom: 8px;
+}

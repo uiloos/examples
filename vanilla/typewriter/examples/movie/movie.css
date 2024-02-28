@@ -1,0 +1,9 @@
+#movie-typewriter {
+  font-weight: bold;
+  min-height: 100px;
+  font-size: 22px;
+  background: linear-gradient(#d91a1a, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

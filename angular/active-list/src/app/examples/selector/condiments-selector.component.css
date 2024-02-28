@@ -1,0 +1,10 @@
+.condiments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 32px;
+}
+
+.error {
+  color: red;
+}

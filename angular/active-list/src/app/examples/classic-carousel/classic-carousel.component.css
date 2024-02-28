@@ -1,0 +1,104 @@
+.classic-carousel {
+    height: 480px;
+    width: 512px;
+    overflow-x: hidden;
+  }
+  
+  .classic-carousel ul {
+    position: relative;
+  }
+  
+  .classic-carousel .slide.right {
+    position: absolute;
+    top: 0;
+    display: block;
+    transform: translateX(100%);
+  }
+  
+  .classic-carousel .slide.left {
+    position: absolute;
+    top: 0;
+    display: block;
+    transform: translateX(-100%);
+  }
+  
+  .classic-carousel .slide.active {
+    position: absolute;
+    display: block;
+    transform: translateX(0);
+  }
+  
+  .classic-carousel .slide.animate {
+    transition: transform 0.5s;
+  }
+  
+  .classic-carousel .slide img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .classic-carousel .slide {
+    display: none;
+  }
+  
+  .classic-carousel article {
+    padding: 12px;
+  }
+  
+  .classic-carousel article h4 {
+    margin-bottom: 8px;
+  }
+  
+  .classic-carousel .progress {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+  }
+  
+  .classic-carousel .progress li > button {
+    width: 30px;
+    background-color: gray;
+    height: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .classic-carousel .progress li > button.active {
+    background: linear-gradient(
+      to right,
+      rgb(107 33 168) 50%,
+      rgb(102, 102, 102) 50%
+    );
+    background-size: 200% 100%;
+  }
+  
+  @keyframes progress {
+    from {
+      background-position: right bottom;
+    }
+    to {
+      background-position: left bottom;
+    }
+  }
+  
+  .classic-carousel .controls {
+    width: 100%;
+    max-width: 512px;
+    position: absolute;
+    top: 200px;
+    padding: 0 12px;
+  }
+  
+  .classic-carousel .controls-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .classic-carousel .controls-container > button {
+    border: none;
+    background: none;
+    font-size: 82px;
+    color: purple;
+    cursor: pointer;
+  }

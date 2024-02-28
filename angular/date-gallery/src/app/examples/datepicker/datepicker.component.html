@@ -1,0 +1,42 @@
+<div class="datepicker">
+    <div class="datepicker-input-wrapper">
+      <input
+        type="text"
+        class="date"
+        [value]="inputValue"
+        (input)="inputValueChanged($event)"
+        (blur)="dateChanged()"
+        placeholder="06/31/2000"
+      />
+
+      <input
+        *ngIf="timeEnabled"
+        type="text"
+        class="time"
+        placeholder="12:30"
+        [value]="timeValue"
+        (input)="timeValueChanged($event)"
+        (blur)="timeChanged()"
+      />
+
+      <button
+        aria-label="Open calendar"
+        class="calendar-button"
+        type="button"
+        (click)="onCalendarButtonClicked()"
+      >
+        📅
+      </button>
+    </div>
+
+    <span *ngIf="error" class="error">{{ error }}</span>
+
+    <datepicker-dialog
+      *ngIf="showDialog"
+      [value]="inputValue"
+      (selected)="datePicked($event)"
+      (close)="onClose()"
+      [min]="minDate ?? undefined"
+      [max]="maxDate ?? undefined"
+    />
+  </div>

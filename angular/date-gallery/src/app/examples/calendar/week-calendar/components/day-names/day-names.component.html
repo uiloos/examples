@@ -1,0 +1,12 @@
+<ng-template #template>
+  <button
+    *ngFor="let dateObj of dateGallery.firstFrame.dates; index as i; trackBy: dateTrackBy"
+    class="calendar-week-dayname"
+    [ngStyle]="{ 'gridColumn': i + 2, gridRow: 1 }"
+    (click)="onClick($event, dateObj.date)"
+  >
+    <time [dateTime]="dateObj.date.toISOString()">
+      {{ weekDayFormatter.format(dateObj.date) }}
+    </time>
+  </button>
+</ng-template>

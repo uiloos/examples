@@ -1,0 +1,11 @@
+<div class="accordion-example">
+    <details
+        *ngFor="let content of accordion.contents"
+        [open]="content.isActive"
+        (click)="open($event, content)"
+    >
+        <summary>{{ content.value.summary }}</summary>
+
+        <p>{{ content.value.content }}</p>
+    </details>
+</div>

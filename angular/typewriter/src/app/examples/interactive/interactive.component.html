@@ -1,0 +1,12 @@
+<div>
+  <div
+    id="interactive-typewriter-text"
+    (mouseenter)="onMouseEnter()"
+    (mouseout)="onMouseOut()"
+  >
+    {{typewriter.text}}
+  </div>
+  <button (click)="play()">Play</button>
+  <button (click)="pause()">Pause</button>
+  <button (click)="stop()">Stop</button>
+</div>

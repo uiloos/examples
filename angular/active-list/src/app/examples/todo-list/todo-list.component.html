@@ -1,0 +1,46 @@
+<div class="todo-example">
+    <form class="todo-form" (submit)="addTodo($event)">
+      <div>
+        <label>
+          New todo
+          <input name="todo" required />
+        </label>
+      </div>
+
+      <button type="submit">Add todo</button>
+    </form>
+
+    <h1>Todo</h1>
+
+    <div class="todo">
+      <div
+        *ngFor="let content of todoList.contents"
+       
+        class="todo-item"
+        [ngClass]="{ done: content.isActive }"
+        draggable="true"
+        (dragstart)="onDragStart($event, content)"
+        (dragover)="onDragOver($event, content)"
+        (ondrop)="$event.preventDefault()"
+      >
+        <label>
+          <input
+            type="checkbox"
+            [checked]="content.isActive"
+            (change)="content.toggle()"
+          />
+          {{ content.value.text }}
+        </label>
+
+        <div class="buttons">
+          <button (click)="content.swapWithPrevious()">↑</button>
+          <button (click)="content.swapWithNext()">↓</button>
+        </div>
+      </div>
+    </div>
+
+    <small>
+      {{ todoList.active.length }} / {{ todoList.contents.length }} todo's are
+      done
+    </small>
+  </div>

@@ -1,0 +1,26 @@
+.segment-example {
+  margin-bottom: 16px;
+}
+
+.segment-example .segment-container {
+  display: flex;
+  justify-content: center;
+}
+
+.segment-example button {
+  color: black;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+
+.segment-example button.active,
+.segment-example button:hover {
+  color: white;
+  background-color: black;
+}
+
+.segment-example p {
+  padding: 0 64px;
+  margin: 16px 0;
+  max-width: 512px;
+}

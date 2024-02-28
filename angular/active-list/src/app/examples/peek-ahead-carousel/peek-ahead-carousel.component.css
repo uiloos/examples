@@ -1,0 +1,38 @@
+.peek-ahead-carousel {
+  display: flex;
+  gap: 8px;
+  width: 512px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  list-style-type: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.peek-ahead-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.peek-ahead-carousel .slide {
+  /* 
+    Show the previous and next slides a little, 
+    I call this peek ahead 
+  */
+  min-width: calc(512px - 48px);
+  scroll-snap-align: center;
+}
+
+.peek-ahead-carousel .slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+.peek-ahead-carousel article {
+  padding: 12px 0px;
+}
+
+.peek-ahead-carousel article h4 {
+  margin-bottom: 8px;
+}

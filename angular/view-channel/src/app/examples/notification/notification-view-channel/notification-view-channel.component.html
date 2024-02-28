@@ -1,0 +1,15 @@
+<div class="notifications">
+  <div *ngIf="views.length; else noNotifications">
+    <button (click)="dismissAll()">
+      Clear all
+    </button>
+  </div>
+
+  <ng-template #noNotifications>
+    <p>No notifications yet</p>
+  </ng-template>
+
+  <div role="status" aria-live="polite">
+    <notification *ngFor="let view of views" [view]="view"></notification>
+  </div>
+</div>

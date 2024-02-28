@@ -1,0 +1,27 @@
+<div id="multicursor-typewriter">
+  <ng-container *ngFor="let position of typewriter; trackBy: positionTracker">
+    <ng-container
+      *ngFor="
+        let cursor of position.cursors.slice().reverse();
+        trackBy: cursorTracker
+      "
+    >
+      <span
+        class="cursor"
+        [class.blink]="cursor.isBlinking"
+        [style.--cursor-color]="cursor.data?.color"
+      ></span>
+      <span
+        *ngFor="let cursor of position.cursors.slice().reverse()"
+        class="info"
+        [style.--cursor-color]="cursor.data?.color"
+        >{{ cursor.data?.name }}</span
+      >
+    </ng-container>
+    <span
+      class="letter"
+      [style.--background-color]="getBackgroundColorForPosition(position)"
+      >{{ position.character }}</span
+    >
+  </ng-container>
+</div>

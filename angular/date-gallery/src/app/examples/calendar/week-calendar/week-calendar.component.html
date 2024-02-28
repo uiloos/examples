@@ -1,0 +1,23 @@
+<div class="calendar-week" [style.--height]="height">
+  <div class="calendar-week-grid">
+    <hour-indicators />
+
+    <day-names [dateGallery]="dateGallery" />
+
+    <day-grid
+      *ngFor="let entry of entries; index as i; trackBy: entryTrackBy"
+      (openNewEventForm)="newEventForm($event)"
+      [date]="entry.dateObj.date"
+      [gridColumn]="i + 2"
+    >
+      <week-event
+        *ngFor="let event of entry.dateObj.events; trackBy: eventTrackBy"
+        [event]="event"
+        [dateGallery]="dateGallery"
+        [date]="entry.dateObj.date"
+        [gridColumn]="entry.eventColumns.get(event) ?? '1'"
+        (click)="openEditForm(event)"
+      />
+    </day-grid>
+  </div>
+</div>

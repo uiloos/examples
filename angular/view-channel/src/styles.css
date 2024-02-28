@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+button {
+  margin: 0 2px;
+}
+
+@keyframes progress {
+  from {
+    background-position: right bottom;
+  }
+  to {
+    background-position: left bottom;
+  }
+}

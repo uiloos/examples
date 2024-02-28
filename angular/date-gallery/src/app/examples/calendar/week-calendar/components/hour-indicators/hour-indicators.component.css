@@ -1,0 +1,18 @@
+.calendar-week-hour {
+  grid-column: 1 / 9;
+  margin-top: -10px; /* Align the hour bar on the grid */
+  height: 60px;
+  margin-left: 56px;
+}
+
+.calendar-week-hour::after {
+  display: block;
+  content: " ";
+  background-color: lightgray;
+  height: 1px;
+  width: calc(100% - 64px);
+  position: relative;
+  bottom: 10px;
+  left: 64px;
+  z-index: -1;
+}

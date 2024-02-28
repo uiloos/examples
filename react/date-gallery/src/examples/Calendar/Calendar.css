@@ -1,0 +1,56 @@
+.calendar-example {
+  display: grid;
+  gap: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.calendar-example .error {
+  color: red;
+}
+
+.calendar-example button {
+  cursor: pointer;
+}
+
+.calendar-example ul {
+  list-style: none;
+}
+
+.calendar-example .calender-topbar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "left center right";
+  place-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar-actions,
+.calendar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendar-example .calendar-mode {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-example .calendar-mode button {
+  padding: 8px;
+}
+
+.calendar-example .calendar-mode button.active {
+  padding: 8px;
+  background-color: black;
+  color: white;
+}
+
+.calendar-example .calendar-button {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.calendar-example .calendar-title {
+  font-size: 26px;
+}

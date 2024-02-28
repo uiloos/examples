@@ -1,0 +1,79 @@
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.daterangepicker-dialog-content {
+  display: grid;
+  justify-items: center;
+  height: 360px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  align-self: start;
+}
+
+.topbar .month {
+  font-size: 16px;
+}
+
+.topbar .year {
+  width: 42px;
+}
+
+.topbar button {
+  width: 42px;
+  font-size: 32px;
+  background-color: white;
+}
+
+.daygrid {
+  display: grid;
+  grid-template-columns: repeat(7, 42px);
+  justify-items: center;
+  align-self: end;
+}
+
+.dates button {
+  width: 42px;
+  height: 42px;
+  background-color: white;
+}
+
+.dates .selected {
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+.dates .start-of-range {
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+
+.dates .end-of-range {
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+
+.bottombar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.bottombar button {
+  padding: 4px;
+}

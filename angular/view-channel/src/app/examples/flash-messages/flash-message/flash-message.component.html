@@ -1,0 +1,23 @@
+<div
+  [ngClass]="['flash-message', 'flash-message-' + view.data.type]"
+  [style.zIndex]="getZIndex()"
+  (click)="view.dismiss(undefined)"
+  (mouseover)="view.pause()"
+  (mouseleave)="view.play()"
+>
+  <div class="flash-message-row">
+    <div class="flash-message-content">
+      <span class="flash-message-icon">
+        {{ getSymbol() }}
+      </span>
+      <p>{{ view.data.text }}</p>
+    </div>
+    <span class="flash-message-close">𐄂</span>
+  </div>
+
+  <flash-message-progress
+    [isPlaying]="view.autoDismiss.isPlaying"
+    [duration]="view.autoDismiss.duration"
+    [type]="view.data.type"
+  ></flash-message-progress>
+</div>

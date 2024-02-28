@@ -1,0 +1,13 @@
+.segment-example {
+  margin-bottom: 16px;
+}
+
+.segment-example .tab-content {
+  padding: 1rem;
+}
+
+.segment-example p {
+  padding: 0 64px;
+  margin: 16px 0;
+  max-width: 512px;
+}

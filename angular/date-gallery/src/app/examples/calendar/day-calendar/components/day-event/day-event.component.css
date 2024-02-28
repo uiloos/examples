@@ -1,0 +1,44 @@
+.calendar-day-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.9;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.calendar-day-event button {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.calendar-day-event .text-container {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  display: flex;
+  gap: 4px;
+}
+
+.calendar-day-event .end-time {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.calendar-day-event .drag-indicator {
+  width: 4px;
+  height: 30px;
+}
+
+.calendar-day-event .drag-indicator[draggable="true"] {
+  cursor: col-resize;
+}

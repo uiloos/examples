@@ -1,0 +1,21 @@
+<div class="modal-backdrop" (click)="onCancelClicked()"></div>
+
+<div
+  class="modal"
+  [attr.aria-label]="view.data.info.title"
+  aria-describedby="modal-description"
+>
+  <button
+    class="modal-close"
+    (click)="onCancelClicked()"
+    aria-label="Close modal"
+  >
+    ✖
+  </button>
+
+  <h1>{{ view.data.info.title }}</h1>
+
+  <p id="modal-description">{{ view.data.info.description }}</p>
+
+  <ng-template modalLoader=""></ng-template>
+</div>

@@ -1,0 +1,9 @@
+<div class="segment-container">
+  <button
+    *ngFor="let content of segmentedButtons.contents"
+    (click)="activate($event, content)"
+    [ngClass]="{ active: content.isActive }"
+  >
+    {{ content.value.label }}
+  </button>
+</div>

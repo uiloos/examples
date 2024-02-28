@@ -1,0 +1,53 @@
+.calendar-month-event {
+  --color: #000000; /* color is set from js */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  background-color: white;
+  font-size: 16px;
+  min-height: 32px;
+}
+
+.calendar-month-event::before {
+  content: "";
+  border-radius: 25px;
+  background-color: var(--color);
+  width: 10px;
+  height: 10px;
+  margin-left: 4px;
+}
+
+.calendar-month-event.multiple {
+  margin-left: -1px;
+}
+
+.calendar-month-event.first-day-of-event {
+  border-left: 1px solid black;
+}
+
+.calendar-month-event.multiple::before {
+  display: none;
+}
+
+.calendar-month-event-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  background-color: transparent;
+  padding: 0 4px;
+}
+
+.calendar-month-event-title {
+  width: 75px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.calendar-month-event-more {
+  margin-top: 4px;
+  font-size: 16px;
+  text-align: right;
+}

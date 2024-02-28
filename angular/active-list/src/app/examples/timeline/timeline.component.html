@@ -1,0 +1,36 @@
+<div class="timeline">
+  <ol class="timeline-list">
+    <li
+      *ngFor="let content of timeline.contents"
+      class="timeline-item"
+      [ngClass]="{
+        'seen': content.hasBeenActiveBefore,
+        'current': content.isActive,
+        'previous': content.isPrevious,
+        'next': content.isNext
+      }"
+      (click)="content.activate()"
+    >
+      <span class="timeline-item-label">{{content.value.name}}</span>
+      <span class="timeline-item-time">{{content.value.released}}</span>
+    </li>
+  </ol>
+
+  <div class="timeline-content">
+    <div class="timeline-content-controls">
+      <button (click)="timeline.activatePrevious()" type="button">
+        ‹
+      </button>
+
+      <h1>{{timeline.lastActivated?.name}}</h1>
+
+      <button (click)="timeline.activateNext()" type="button">
+        ›
+      </button>
+    </div>
+
+    <p>
+      {{timeline.lastActivated?.description}}
+    </p>
+  </div>
+</div>

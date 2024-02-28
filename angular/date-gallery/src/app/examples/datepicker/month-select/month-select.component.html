@@ -1,0 +1,5 @@
+  <select [value]="dateGallery.firstFrame.anchorDate.getMonth()" (change)="onMonthChanged($event)">
+    <option *ngFor="let month of months" [value]="month">
+      {{ formatMonth(month) }}
+    </option>
+  </select>

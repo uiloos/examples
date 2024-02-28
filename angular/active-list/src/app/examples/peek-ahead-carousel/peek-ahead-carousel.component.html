@@ -1,0 +1,45 @@
+<div>    
+  <progress-bar
+    [slide]="carousel.lastActivated?.id ?? -1"
+    [isPlaying]="carousel.autoPlay.isPlaying"
+    [duration]="carousel.autoPlay.duration"
+    [hide]="userTookOver"
+  />
+
+  <ul
+    #carouselElement
+    class="peek-ahead-carousel"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+    (scroll)="onScroll()"
+    (scrollend)="onScrollEnd()"
+  >
+    <li
+      *ngFor="let content of carousel.contents"
+      id="peek-ahead-carousel-slide-{{content.value.id}}"
+      class="slide"
+    >
+      <img
+        width="1920"
+        height="1280"
+        [src]="content.value.img.src"
+        alt="a {{content.value.name}}"
+      />
+      <article>
+        <h4>{{ content.value.name }}</h4>
+        <p>{{ content.value.description }}</p>
+
+        <p>
+          Photo by
+          <a
+            [href]="content.value.img.attribution"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ content.value.img.author }}
+          </a>
+        </p>
+      </article>
+    </li>
+  </ul>
+</div>

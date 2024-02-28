@@ -1,0 +1,16 @@
+.segment-container {
+  display: flex;
+  justify-content: center;
+}
+
+.segment-container button {
+  color: black;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+
+.segment-container button.active,
+.segment-container button:hover {
+  color: white;
+  background-color: black;
+}

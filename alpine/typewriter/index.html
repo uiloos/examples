@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/examples/karaoke.css" />
+    <link rel="stylesheet" href="/examples/multicursor.css" />
+    <link rel="stylesheet" href="/examples/sentences.css" />
+    <link rel="stylesheet" href="/examples/lullaby.css" />
+    <link rel="stylesheet" href="/examples/movie.css" />
+    <link rel="stylesheet" href="/examples/interactive.css" />
+
+    <title>Typewriter</title>
+  </head>
+  <body>
+    <div
+      id="sentences-typewriter"
+      x-data="sentencesTypewriter({
+        alpine: {
+          name: 'sentences'
+        },
+        autoPlay: false,
+        sentences: [
+          'Superman is the man of steel',
+          'Supergirls real name is Kara Zor-El',
+          'Batman is the dark knight',
+          'Batmans nemesis is called the Joker',
+          'The Flash can run through time',
+          'Wonder woman possesses the Lasso of Truth'
+        ],
+        repeat: true,
+        repeatDelay: 2000,
+        text: 'Wonder woman possesses the Lasso of Truth'
+      })"
+      x-init="sentences().play()"
+    >
+      <span x-text="sentences().text"></span>
+      <span
+        id="sentences-typewriter-cursor"
+        :class="{blinking: sentences().cursors[0].isBlinking }"
+      ></span>
+    </div>
+
+    <div
+      id="multicursor-typewriter"
+      x-data="typewriter({
+        alpine: {
+          name: 'multicursor'
+        },
+        autoPlay: false,
+        repeat: true,
+        repeatDelay: 10000,
+        cursors: [
+          {
+            position: 0,
+            data: {
+              name: 'Jim',
+              color: '#ef4444'
+            }
+          },
+          {
+            position: 0,
+            data: {
+              name: 'Dwight',
+              color: '#d946ef'
+            }
+          },
+          {
+            position: 0,
+            data: {
+              name: 'Pam',
+              color: '#22c55e'
+            }
+          },
+          {
+            position: 0,
+            data: {
+              name: 'Michael',
+              color: '#3b82f6'
+            }
+          }
+        ],
+        actions: [
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'W',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'i',
+            delay: 87
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 141
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'h',
+            delay: 76
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 99
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'c',
+            delay: 44
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'o',
+            delay: 79
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'l',
+            delay: 30
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'l',
+            delay: 113
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'a',
+            delay: 80
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'b',
+            delay: 44
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 72
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'y',
+            delay: 64
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'o',
+            delay: 87
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'u',
+            delay: 56
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 80
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'c',
+            delay: 88
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'a',
+            delay: 84
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'n',
+            delay: 59
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 73
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'c',
+            delay: 8
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'r',
+            delay: 44
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'e',
+            delay: 76
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'a',
+            delay: 108
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'e',
+            delay: 47
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 133
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'w',
+            delay: 177
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'i',
+            delay: 102
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'k',
+            delay: 160
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'i',
+            delay: 152
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 's',
+            delay: 116
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ',',
+            delay: 124
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 83
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'd',
+            delay: 53
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'o',
+            delay: 64
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'c',
+            delay: 125
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'u',
+            delay: 108
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'm',
+            delay: 55
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'e',
+            delay: 109
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'n',
+            delay: 87
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 's',
+            delay: 96
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ',',
+            delay: 75
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 40
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'p',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'r',
+            delay: 106
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 's',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'e',
+            delay: 139
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'n',
+            delay: 132
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 104
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'a',
+            delay: 55
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 160
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'i',
+            delay: 78
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'o',
+            delay: 61
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'n',
+            delay: 44
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 's',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ',',
+            delay: 44
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 84
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'a',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'n',
+            delay: 99
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'd',
+            delay: 84
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 61
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'p',
+            delay: 124
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'r',
+            delay: 151
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'o',
+            delay: 105
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'j',
+            delay: 60
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'e',
+            delay: 49
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'c',
+            delay: 88
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 158
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'z',
+            delay: 88
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 156
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 43
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'o',
+            delay: 63
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'g',
+            delay: 33
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'e',
+            delay: 144
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 't',
+            delay: 87
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'h',
+            delay: 43
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'e',
+            delay: 96
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'r',
+            delay: 69
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: '.',
+            delay: 43
+          },
+          {
+            type: 'mouse',
+            cursor: 1,
+            position: 5,
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 1,
+            text: '”',
+            delay: 500
+          },
+          {
+            type: 'mouse',
+            cursor: 1,
+            position: 12,
+            delay: 34
+          },
+          {
+            type: 'keyboard',
+            cursor: 1,
+            text: '”',
+            delay: 500
+          },
+          {
+            type: 'mouse',
+            cursor: 1,
+            position: 49,
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 1,
+            text: 'e',
+            delay: 500
+          },
+          {
+            type: 'mouse',
+            cursor: 1,
+            position: 74,
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 1,
+            text: '⌫',
+            delay: 500
+          },
+          {
+            type: 'keyboard',
+            cursor: 1,
+            text: 's',
+            delay: 66
+          },
+          {
+            type: 'mouse',
+            cursor: 2,
+            position: 45,
+            selection: {
+              start: 36,
+              end: 45
+            },
+            delay: 70
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 'd',
+            delay: 1000
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 'o',
+            delay: 178
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 'c',
+            delay: 101
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 's',
+            delay: 73
+          },
+          {
+            type: 'mouse',
+            cursor: 2,
+            position: 55,
+            selection: {
+              start: 42,
+              end: 55
+            },
+            delay: 76
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 's',
+            delay: 1000
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 'l',
+            delay: 131
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 'i',
+            delay: 122
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 'd',
+            delay: 88
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 'e',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: 's',
+            delay: 160
+          },
+          {
+            type: 'mouse',
+            cursor: 2,
+            position: 72,
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: '⌫',
+            delay: 150
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: ' ',
+            delay: 82
+          },
+          {
+            type: 'keyboard',
+            cursor: 2,
+            text: '❤️',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: '⌫',
+            delay: 50
+          },
+          {
+            type: 'mouse',
+            cursor: 3,
+            position: 74,
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: ' ',
+            delay: 125
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'N',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'o',
+            delay: 77
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'w',
+            delay: 92
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: ' ',
+            delay: 65
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'w',
+            delay: 100
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'i',
+            delay: 86
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 't',
+            delay: 53
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'h',
+            delay: 87
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: ' ',
+            delay: 136
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'A',
+            delay: 78
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: 'I',
+            delay: 114
+          },
+          {
+            type: 'keyboard',
+            cursor: 3,
+            text: '!',
+            delay: 44
+          }
+        ]
+      })"
+      x-init="multicursor().play()"
+    >
+      <template x-for="position in [...multicursor()]" :key="position.position">
+        <span class="wrapper">
+          <template x-for="cursor in position.cursors.toReversed()">
+            <span>
+              <span
+                :class="{ cursor: true, blink: cursor.isBlinking}"
+                :style="`--cursor-color: ${cursor.data.color}`"
+              ></span>
+              <span
+                class="info"
+                :style="`--cursor-color: ${cursor.data.color}`"
+                x-text="cursor.data.name"
+              >
+              </span>
+            </span>
+          </template>
+
+          <span
+            class="letter"
+            :style="`--background-color: ${getBackgroundColorForPosition(position)}`"
+            x-text="position.character"
+          >
+          </span>
+        </span>
+      </template>
+    </div>
+
+    <!--
+      The multicursor typewriter example above is different from all other
+      bindings (React, Vue, Angular, Svelte).
+      
+      This is because Alpine.js does not support multiple children in x-for
+      loops.
+      
+      In x-for you are must have only one child root node in the template tag.
+      
+      In order to have only one root node all positions are wrapped in a span
+      with the CSS class .wrapper, which does a float: left.
+
+      Float left ignores "spaces" however so everything hugs together, to fix
+      this all "spaces" in the text contain a "unicode thin space" (U+2009).
+    -->
+
+    <div
+      id="movie-typewriter"
+      x-data="typewriter({
+        alpine: {
+          name: 'movie'
+        },
+        autoPlay: false,
+        repeat: true,
+        repeatDelay: 10000,
+        actions: [
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'This',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'summer',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'experience',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'a',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'film',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'like',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'never',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'before',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ':',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'Vampires',
+            delay: 1000
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'from',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'Venus',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'VII:',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'the',
+            delay: 2000
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: ' ',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: 'Quickening',
+            delay: 50
+          },
+          {
+            type: 'keyboard',
+            cursor: 0,
+            text: '.',
+            delay: 50
+          }
+        ]
+      })"
+      x-init="movie().play()"
+      x-text="movie().text"
+    ></div>
+
+    <div
+      id="lullaby-typewriter"
+      x-data="typewriter({
+        alpine: {
+          name: 'lullaby'
+        },
+        autoPlay: false,
+        repeat: true,
+        repeatDelay: 10000,
+        keepHistoryFor: 1,
+        actions: [
+          { type: 'keyboard', cursor: 0, text: 'Twinkle', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'twinkle', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'little', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'star', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'How', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'I', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'wonder', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'what', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'you', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'are!', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'Up', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'above', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'the', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'world', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'so', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'high.', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'Like', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'a', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'diamond', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'in', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'the', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'sky', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'Twinkle,', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'twinkle', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'little', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'star', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'How', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'I', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'wonder', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'what', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'you', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'are!', delay: 500 }
+        ]
+      })"
+      x-init="lullaby().play()"
+      x-effect="lullaby().history[0]?.action?.text 
+                  ? $el.textContent = `🎵 ${lullaby().history[0].action?.text ?? ''} 🎵`
+                  : undefined"
+    ></div>
+
+    <div
+      id="karaoke-typewriter"
+      x-data="typewriter({
+        alpine: {
+          name: 'karaoke'
+        },
+        autoPlay: false,
+        repeat: true,
+        repeatDelay: 5000,
+        actions: [
+          { type: 'keyboard', cursor: 0, text: 'Turn ', delay: 400 },
+          { type: 'keyboard', cursor: 0, text: 'around ', delay: 300 },
+          { type: 'keyboard', cursor: 0, text: 'bright ', delay: 500 },
+          { type: 'keyboard', cursor: 0, text: 'eyes! ', delay: 400 },
+          { type: 'keyboard', cursor: 0, text: 'Every ', delay: 1000 },
+          { type: 'keyboard', cursor: 0, text: 'now ', delay: 400 },
+          { type: 'keyboard', cursor: 0, text: 'and ', delay: 100 },
+          { type: 'keyboard', cursor: 0, text: 'then ', delay: 100 },
+          { type: 'keyboard', cursor: 0, text: 'I ', delay: 100 },
+          { type: 'keyboard', cursor: 0, text: 'fall ', delay: 100 },
+          { type: 'keyboard', cursor: 0, text: 'apart!', delay: 100 }
+        ]
+      })"
+      x-init="karaoke().play()"
+    >
+      <span id="karaoke-typewriter-highlight" x-text="karaoke().text"></span>
+      <span id="karaoke-typewriter-regular">
+        Turn around bright eyes! Every now and then I fall apart!
+      </span>
+    </div>
+
+    <div x-data="interactive" x-init="interactive().play()">
+      <div
+        id="interactive-typewriter-text"
+        x-text="interactive().text"
+        @mouseenter="interactive().pause()"
+        @mouseout="interactive().hasBeenStoppedBefore ? undefined : interactive().play()"
+      >
+        This animations autoPlay is disabled, press "play" to start, or hover
+        over this text.
+      </div>
+      <button @click="interactive().play()">Play</button>
+      <button @click="interactive().pause()">Pause</button>
+      <button @click="interactive().stop()">Stop</button>
+    </div>
+
+    <!-- @uiloos/core -->
+    <script
+      src="https://unpkg.com/@uiloos/core@1.4.0/dist/uiloos-license-checker-1.4.0.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/@uiloos/core@1.4.0/dist/uiloos-typewriter-1.4.0.min.js"
+      defer
+    ></script>
+
+    <!-- @uiloos/alpine -->
+    <script
+      src="https://unpkg.com/@uiloos/alpine@1.4.0/dist/uiloos-alpine-typewriter-1.4.0.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://unpkg.com/@uiloos/alpine@1.4.0/dist/uiloos-alpine-typewriter-from-sentences-1.4.0.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://unpkg.com/@uiloos/alpine@1.4.0/dist/uiloos-alpine-subscribe-1.4.0.min.js"
+      defer
+    ></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script defer>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("typewriter", window.uiloosAlpineTypewriter.typewriter);
+        Alpine.data(
+          "sentencesTypewriter",
+          window.uiloosAlpineTypewriterFromSentences.typewriterFromSentences
+        );
+
+        // This example shows you can instantiate from within js as well.
+        const interactive = new window.uiloosTypewriter.Typewriter({
+          autoPlay: false,
+          repeat: true,
+          repeatDelay: 1000,
+          actions: [
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "C",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "l",
+              delay: 132
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 84
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "c",
+              delay: 114
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "k",
+              delay: 91
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 110
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "p",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "u",
+              delay: 95
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "s",
+              delay: 85
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 108
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 114
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 144
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 55
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 65
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "p",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 99
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "u",
+              delay: 117
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "s",
+              delay: 47
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 102
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 55
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 93
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "h",
+              delay: 51
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 100
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 130
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 138
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "m",
+              delay: 68
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 67
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 111
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 26
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 34
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 55
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 30,
+              delay: 150
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 30,
+              delay: 150
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 0,
+              delay: 150
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 36,
+              selection: {
+                start: 0,
+                end: 36
+              },
+              delay: 30
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "⌫",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "C",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "l",
+              delay: 112
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 85
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "c",
+              delay: 100
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "k",
+              delay: 112
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 100
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "s",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 103
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 37
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "p",
+              delay: 96
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 91
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 72
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 55
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "s",
+              delay: 143
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 89
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 130
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "p",
+              delay: 81
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 72
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "h",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 66
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 123
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 99
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 113
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 135
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "m",
+              delay: 85
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 51
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 82
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 45
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 60
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 50
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: ",",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 76
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "c",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "l",
+              delay: 74
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 68
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "c",
+              delay: 84
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "k",
+              delay: 97
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 52
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "g",
+              delay: 58
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 90
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "p",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "l",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 104
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "y",
+              delay: 82
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 85
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "w",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 90
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "l",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "l",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 78
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "h",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 109
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 108
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 69
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "r",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 80
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "s",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 119
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 92
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "r",
+              delay: 113
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 97
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 136
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 143
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 93
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 65,
+              delay: 150
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 62,
+              delay: 132
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 69,
+              selection: {
+                start: 62,
+                end: 69
+              },
+              delay: 93
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 0,
+              delay: 89
+            },
+            {
+              type: "mouse",
+              cursor: 0,
+              position: 72,
+              selection: {
+                start: 0,
+                end: 72
+              },
+              delay: 100
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "Y",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "u",
+              delay: 87
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 94
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "c",
+              delay: 84
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 92
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 91
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 95
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 90
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "l",
+              delay: 128
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "s",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 74
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 91
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "h",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "v",
+              delay: 105
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "r",
+              delay: 92
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: '"',
+              delay: 138
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 126
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "v",
+              delay: 101
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 133
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "r",
+              delay: 92
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 100
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 105
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "h",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 139
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 94
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "m",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 125
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 109
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 113
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 110
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "n",
+              delay: 110
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 124
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 142
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "o",
+              delay: 111
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 119
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "p",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "a",
+              delay: 130
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "u",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "s",
+              delay: 136
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "e",
+              delay: 114
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: " ",
+              delay: 132
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "i",
+              delay: 150
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: "t",
+              delay: 117
+            },
+            {
+              type: "keyboard",
+              cursor: 0,
+              text: ".",
+              delay: 119
+            }
+          ]
+        });
+
+        Alpine.data(
+          "interactive",
+          window.uiloosAlpineSubscribe.subscribe("interactive", interactive)
+        );
+
+        window.getBackgroundColorForPosition = function (position) {
+          const selected = position.selected;
+
+          if (selected.length === 0) {
+            return "";
+          }
+
+          // 30 transparency
+          return selected[selected.length - 1].data.color + "30";
+        };
+      });
+    </script>
+  </body>
+</html>

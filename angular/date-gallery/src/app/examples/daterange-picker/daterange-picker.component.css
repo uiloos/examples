@@ -1,0 +1,14 @@
+.daterangepicker {
+  display: grid;
+  gap: 4px;
+}
+
+.daterangepicker .calendar-button {
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}

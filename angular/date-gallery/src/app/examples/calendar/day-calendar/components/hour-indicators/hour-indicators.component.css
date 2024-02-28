@@ -1,0 +1,9 @@
+.calendar-day-hour {
+  display: flex;
+  margin-left: -1px;
+  padding-left: 4px;
+  border-left: solid lightgray 1px;
+  cursor: pointer;
+  background-color: white;
+  font-size: 16px;
+}

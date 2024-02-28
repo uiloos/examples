@@ -1,0 +1,27 @@
+node_modules/
+npm-debug.log
+
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+.nx
+.cache
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# OS files
+.DS_Store
+
+# Framework directories
+.angular
+.svelte-kit
+
+# Output
+dist
+
+# Editor
+.vscode

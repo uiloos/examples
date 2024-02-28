@@ -1,0 +1,16 @@
+.progress-button {
+  width: 30px;
+  background-color: gray;
+  height: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.progress-button.active {
+  background: linear-gradient(
+    to right,
+    rgb(107 33 168) 50%,
+    rgb(102, 102, 102) 50%
+  );
+  background-size: 200% 100%;
+}

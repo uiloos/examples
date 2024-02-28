@@ -1,0 +1,8 @@
+<ng-template #template>
+  <div
+    *ngIf="dateGallery.firstFrame.dates[0].isToday"
+    #ref
+    class="calendar-day-current-time"
+    [ngStyle]="getStyle()"
+  ></div>
+</ng-template>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/examples/karaoke/karaoke.css" />
+    <link rel="stylesheet" href="/examples/multicursor/multicursor.css" />
+    <link rel="stylesheet" href="/examples/sentences/sentences.css" />
+    <link rel="stylesheet" href="/examples/lullaby/lullaby.css" />
+    <link rel="stylesheet" href="/examples/movie/movie.css" />
+    <link rel="stylesheet" href="/examples/interactive/interactive.css" />
+
+    <title>Typewriter</title>
+  </head>
+  <body>
+    <div id="sentences-typewriter"></div>
+
+    <div id="multicursor-typewriter"></div>
+
+    <div id="movie-typewriter"></div>
+
+    <div id="lullaby-typewriter"></div>
+
+    <div id="karaoke-typewriter">
+      <span id="karaoke-typewriter-highlight"></span>
+      <span id="karaoke-typewriter-regular">
+        Turn around bright eyes! Every now and then I fall apart!
+      </span>
+    </div>
+
+    <div>
+      <div id="interactive-typewriter-text">
+        This animations autoPlay is disabled, press "play" to start, or hover
+        over this text.
+      </div>
+      <button id="interactive-typewriter-play">Play</button>
+      <button id="interactive-typewriter-pause">Pause</button>
+      <button id="interactive-typewriter-stop">Stop</button>
+    </div>
+
+    <script
+      src="https://unpkg.com/@uiloos/core@1.2.0/dist/uiloos-license-checker-1.2.0.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/@uiloos/core@1.2.0/dist/uiloos-typewriter-1.2.0.min.js"
+      defer
+    ></script>
+
+    <script type="module" src="/examples/main.js"></script>
+  </body>
+</html>

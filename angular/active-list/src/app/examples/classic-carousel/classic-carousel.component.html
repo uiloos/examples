@@ -1,0 +1,66 @@
+
+  <div
+    class="classic-carousel"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+  >
+    <ul>
+      <li
+        *ngFor="let content of carousel?.contents"
+        [attr.aria-hidden]="!content.isActive"
+        [class]="
+          content.isActive
+            ? activeCss
+            : carousel.lastDeactivatedIndex === content.index
+            ? previousCss
+            : 'slide'
+        "
+      >
+        <img
+          width="1920"
+          height="1280"
+          [src]="content.value.img.src"
+          alt="a {{content.value.name}}"
+        />
+
+        <article>
+          <h4>{{ content.value.name }}</h4>
+          <p>{{ content.value.description }}</p>
+
+          <p>
+            Photo by
+            <a
+              :href="content.value.img.attribution"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ content.value.img.author }}
+            </a>
+          </p>
+        </article>
+      </li>
+    </ul>
+
+    <ul class="progress">
+      <li *ngFor="let content of carousel?.contents">
+        <progress-button
+          [isActive]="content.isActive"
+          [isPlaying]="carousel.autoPlay.isPlaying"
+          [duration]="carousel.autoPlay.duration"
+          (click)="content.activate()"
+        />
+      </li>
+    </ul>
+
+    <div class="controls">
+      <div class="controls-container">
+        <button (click)="carousel.activatePrevious()" type="button">‹</button>
+
+        <button (click)="carousel.activateNext()" type="button">›</button>
+      </div>
+    </div>
+
+    <div aria-live="polite" aria-atomic="true" class="visually-hidden">
+      Owl {{carousel.lastActivatedIndex + 1}} of 5
+    </div>
+  </div>

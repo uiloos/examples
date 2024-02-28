@@ -1,0 +1,60 @@
+.todo-example {
+  margin: 0 auto 32px auto;
+  width: 320px;
+}
+
+.todo-example .todos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-example .todo-item {
+  padding: 8px;
+  border: solid 1px lightgray;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-example .todo-item.done {
+  opacity: 0.4;
+}
+
+.todo-example .todo-item label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.todo-example .todo-item.done label {
+  text-decoration: line-through;
+}
+
+.todo-example .todo-item .buttons {
+  cursor: pointer;
+  background-color: white;
+  align-self: flex-end;
+  display: flex;
+  gap: 8px;
+}
+
+.todo-example .todo-form input {
+  border: solid 1px black;
+  padding: 4px;
+}
+
+.todo-example .todo-form {
+  margin-bottom: 8px;
+}
+
+.todo-example .todo-form,
+.todo-example .todo-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.todo-example .todo-form button[type="submit"] {
+  padding: 4px;
+}

@@ -1,0 +1,11 @@
+
+<ng-template #template>
+  <span
+    *ngFor="let entry of times"
+    class="calendar-week-hour"
+    [ngStyle]="{ 'gridRow': entry.gridRow }"
+    aria-hidden
+  >
+    {{ entry.time }}
+  </span>
+</ng-template>

@@ -1,0 +1,9 @@
+ <button
+    class="condiment"
+    [ngClass]="{ selected: content.isActive }"
+    (click)="content.toggle()"
+  >
+    <h4>{{ content.value.name }}</h4>
+    <p>{{ content.value.description }}</p>
+    <b>${{ content.value.price }}</b>
+  </button>

@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: 16px;
+  border-top: 1px solid black;
+  padding-top: 16px;
+  max-width: 512px;
+}
+
+.description p {
+  line-height: 1.2rem;
+  margin: 16px 0;
+}

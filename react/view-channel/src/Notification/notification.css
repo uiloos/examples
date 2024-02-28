@@ -1,0 +1,18 @@
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 0;
+}
+
+.notification {
+  border: 1px solid darkslategrey;
+  padding: 8px 2px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-buttons {
+  align-self: flex-end;
+}

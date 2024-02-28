@@ -1,0 +1,38 @@
+.datepicker {
+  display: grid;
+  gap: 4px;
+}
+
+.datepicker .datepicker-input-wrapper {
+  display: flex;
+  gap: 4px;
+  align-content: center;
+}
+
+.datepicker input {
+  border: solid 1px black;
+  padding: 4px;
+}
+
+.datepicker input.date {
+  flex-grow: 1;
+}
+
+.datepicker input.time {
+  min-width: 50px;
+  flex-basis: 0;
+}
+
+.datepicker.invalid input.date .datepicker.invalid input.time {
+  border: solid 1px red;
+}
+
+.datepicker .error {
+  color: red;
+}
+
+.datepicker .calendar-button {
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+}

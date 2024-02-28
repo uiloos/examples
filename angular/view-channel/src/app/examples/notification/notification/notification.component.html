@@ -1,0 +1,17 @@
+<div class="notification">
+  {{ view.data.text }}
+
+  <div class="notification-buttons">
+    <button (click)="onClearClicked()" class="notification-button">
+      Clear
+    </button>
+
+    <button
+      *ngFor="let btn of view.data.buttons"
+      (click)="btn.onClick($event, view)"
+      class="notification-button"
+    >
+      {{btn.label}}
+    </button>
+  </div>
+</div>

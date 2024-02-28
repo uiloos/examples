@@ -1,0 +1,57 @@
+  <div class="calendar-month">
+    <ul class="calendar-month-daynames">
+      <li class="calendar-month-dayname">Sun</li>
+      <li class="calendar-month-dayname">Mon</li>
+      <li class="calendar-month-dayname">Tue</li>
+      <li class="calendar-month-dayname">Wed</li>
+      <li class="calendar-month-dayname">Thu</li>
+      <li class="calendar-month-dayname">Fri</li>
+      <li class="calendar-month-dayname">Sat</li>
+    </ul>
+
+    <ul class="calendar-month-daycells">
+      <li
+       *ngFor="let entry of entries; trackBy: entryTrackBy"
+        class="calendar-month-daycell"
+        [ngClass]="{ padding: entry.dateObj.isPadding }"
+        role="button"
+        attr.aria-label="{{entry.ariaLabel}}"
+        (click)="newEventForm($event, entry.date)"
+        (dragover)="onDragOver($event, entry.dateObj)"
+      >
+        <button
+          class="calendar-month-daycell-number"
+          (click)="dayNumberClicked($event, entry.dateObj)"
+        >
+          <time [dateTime]="entry.dateObj.date.toISOString()">
+            {{ entry.dateObj.date.getDate() }}
+          </time>
+        </button>
+
+        <ul
+          class="calendar-month-daycell-events"
+          [ngStyle]="{ 'grid-template-rows': entry.gridTemplateRows }"
+        >
+          <!--
+              Here we put an event on a specific row in the CSS grid
+              by doing this all event that are on multiple days are
+              neatly ordered within a week, without any gaps.
+
+              See the `calculateEventPositionByDay` function below to
+              see how this is calculated.
+
+              The +1 is needed because CSS Grid starts counting at 1.
+           -->
+          <month-event
+            *ngFor="let event of entry.dateObj.events; trackBy: eventTrackBy"
+            [event]="event"
+            [dateGallery]="dateGallery"
+            [dateObj]="entry.dateObj"
+            [gridRow]="entry.eventsForDay.indexOf(event) + 1"
+            (drag)="setDraggedEvent($event)"
+            (click)="openEditForm(event)"
+          />
+        </ul>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,12 @@
+{
+  "name": "vanilla-date-gallery",
+  "version": "0.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve",
+    "test": "echo done"
+  },
+  "devDependencies": {
+    "serve": "14.2.1"
+  }
+}

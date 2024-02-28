@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/main.css" />
+    <title>ViewChannel</title>
+  </head>
+  <body>
+    <div class="App">
+      <div class="main" x-data="main">
+        <h1>ViewChannel</h1>
+        <h2>Press the buttons to trigger a modal</h2>
+
+        <button @click="pickPokemon()">
+          Pick Pokemon
+        </button>
+
+        <button @click="pickCar()">Pick Car</button>
+
+        <button @click="destroyPlanet()">Destroy Planet</button>
+
+        <p>Tip: hover over flash messages to pause them</p>
+      </div>
+
+      <div x-data class="notifications">
+        <div x-show="$store.notifications.viewChannel().views.length > 0">
+          <button @click="$store.notifications.viewChannel().dismissAll()">
+            Clear all
+          </button>
+        </div>
+        <p x-show="$store.notifications.viewChannel().views.length === 0">
+          No notifications yet
+        </p>
+
+        <div role="status" aria-live="polite">
+          <template
+            x-for="notification in $store.notifications.viewChannel().views"
+            :key="notification.data.id"
+          >
+            <div class="notification">
+              <span x-text="notification.data.text"></span>
+
+              <div class="notification-buttons">
+                <button
+                  @click="notification.dismiss()"
+                  class="notification-button"
+                >
+                  Clear
+                </button>
+
+                <template x-data x-for="btn in notification.data.buttons">
+                  <button
+                    @click="btn.onClick($event, notification)"
+                    class="notification-button"
+                    x-text="btn.label"
+                  ></button>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <div id="modals">
+      <template
+        x-data
+        x-for="modal in $store.modals.viewChannel().views"
+        :key="modal.data.id"
+      >
+        <div>
+          <div class="modal-backdrop" @click="modal.dismiss('CANCELLED')"></div>
+
+          <div
+            class="modal"
+            role="dialog"
+            :aria-label="modal.data.info.title"
+            aria-describedby="modal-description"
+          >
+            <button
+              class="modal-close"
+              @click="modal.dismiss('CANCELLED')"
+              aria-label="Close modal"
+            >
+              ✖
+            </button>
+
+            <h1 x-text="modal.data.info.title"></h1>
+
+            <p id="modal-description" x-text="modal.data.info.description"></p>
+
+            <div x-effect="modal.data.render({modal, $el: $el})"></div>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <div role="status" aria-live="polite">
+      <template
+        x-data
+        x-for="flash in $store.flashMessages.viewChannel().views"
+        :key="flash.data.id"
+      >
+        <div
+          :class="`flash-message flash-message-${flash.data.type}`"
+          :style="`z-index: ${flash.viewChannel.views.length - flash.index}`"
+          @click="flash.dismiss()"
+          @mouseover="flash.pause()"
+          @mouseleave="flash.play()"
+        >
+          <div class="flash-message-row">
+            <div class="flash-message-content">
+              <span
+                class="flash-message-icon"
+                x-text="flash.data.symbol"
+              ></span>
+              <p x-text="flash.data.text"></p>
+            </div>
+            <span class="flash-message-close">𐄂</span>
+          </div>
+
+          <div
+            :class="`flash-message-progress flash-message-progress-${flash.data.type}`"
+            :style="`animation: progress ${flash.autoDismiss.duration}ms ease-out`"
+            x-effect="$el.style.animationPlayState = flash.autoDismiss.isPlaying ? 'running' :'paused'"
+          ></div>
+        </div>
+      </template>
+    </div>
+
+    <div id="confirmation-dialogs">
+      <template
+        x-data
+        x-for="confirmDialog in $store.confirmationDialogs.viewChannel().views"
+        :key="confirmDialog.data.id"
+      >
+        <div>
+          <div
+            class="confirmation-dialog-backdrop"
+            @click="confirmDialog.dismiss(false)"
+          ></div>
+
+          <div
+            class="confirmation-dialog"
+            role="dialog"
+            aria-label="Please confirm"
+            :aria-describedby="confirmDialog.data.text"
+          >
+            <strong>Please confirm</strong>
+            <p x-text="confirmDialog.data.text"></p>
+
+            <div class="confirmation-dialog-button-bar">
+              <button @click="confirmDialog.dismiss(true)">Ok</button>
+              <button @click="confirmDialog.dismiss(false)">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <script
+      src="https://unpkg.com/@uiloos/core@1.4.0/dist/uiloos-license-checker-1.4.0.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/@uiloos/core@1.4.0/dist/uiloos-view-channel-1.4.0.min.js"
+      defer
+    ></script>
+
+    <!-- @uiloos/core -->
+    <script
+      src="https://unpkg.com/@uiloos/core@1.4.0/dist/uiloos-license-checker-1.4.0.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/@uiloos/core@1.4.0/dist/uiloos-typewriter-1.4.0.min.js"
+      defer
+    ></script>
+
+    <!-- @uiloos/alpine -->
+    <script
+      src="https://unpkg.com/@uiloos/alpine@1.4.0/dist/uiloos-alpine-view-channel-1.4.0.min.js"
+      defer
+    ></script>
+
+    <script type="module" src="/scripts/main.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+  <ul class="calendar-day-grid" [style.--width]="width">
+    <hour-indicators
+      [dateGallery]="dateGallery"
+      (openNewEventForm)="newEventForm($event)"
+      [rows]="rows"
+    />
+
+    <current-hour [dateGallery]="dateGallery" [rows]="rows" />
+
+    <day-event
+      *ngFor="let event of dateGallery.firstFrame.events; trackBy: eventTrackBy"
+      [event]="event"
+      [dateGallery]="dateGallery"
+      [gridRow]="eventRows.get(event) ?? '1'"
+      (click)="openEditForm(event)"
+    />
+  </ul>

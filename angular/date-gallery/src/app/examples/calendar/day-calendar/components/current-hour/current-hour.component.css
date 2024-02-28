@@ -1,0 +1,14 @@
+.calendar-day-current-time {
+  background-color: orangered;
+  width: 1px;
+}
+
+.calendar-day-current-time:hover::after {
+  content: attr(time);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+  width: 62px;
+  height: 32px;
+}

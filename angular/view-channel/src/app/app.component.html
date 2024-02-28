@@ -1,0 +1,22 @@
+<div class="App">
+  <div class="main">
+    <h1>ViewChannel</h1>
+    <h2>Press the buttons to trigger a modal</h2>
+
+    <button (click)="onPickPokemon()">Pick Pokemon</button>
+
+    <button (click)="onPickCar()">Pick Car</button>
+
+    <button (click)="onPickPlanet()">Destroy Planet</button>
+
+    <p>Tip: hover over flash messages to pause them</p>
+  </div>
+
+  <notification-view-channel></notification-view-channel>
+</div>
+
+<flash-message-view-channel></flash-message-view-channel>
+
+<modal-view-channel></modal-view-channel>
+
+<confirmation-dialog-view-channel></confirmation-dialog-view-channel>

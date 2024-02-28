@@ -1,0 +1,71 @@
+<my-dialog (keydown)="onKeydown($event)" (close)="closeDialog()">
+  <div class="datepicker-dialog-content">
+    <div class="topbar">
+      <button
+        aria-label="previous"
+        type="button"
+        (click)="dateGallery.previous()"
+      >
+        ‹
+      </button>
+      <span>
+        <month-select [dateGallery]="dateGallery" />
+        <year-input
+          [dateGallery]="dateGallery"
+          [year]="dateGallery.firstFrame.anchorDate.getFullYear()"
+        />
+      </span>
+      <button aria-label="next" type="button" (click)="dateGallery.next()">
+        ›
+      </button>
+    </div>
+
+    <ul class="daygrid">
+      <li>
+        <abbr title="Sunday">S</abbr>
+      </li>
+      <li>
+        <abbr title="Monday">M</abbr>
+      </li>
+      <li>
+        <abbr title="Tuesday">T</abbr>
+      </li>
+      <li>
+        <abbr title="Wednesday">W</abbr>
+      </li>
+      <li>
+        <abbr title="Thursday">T</abbr>
+      </li>
+      <li>
+        <abbr title="Friday">F</abbr>
+      </li>
+      <li>
+        <abbr title="Saturday">S</abbr>
+      </li>
+    </ul>
+
+    <ul class="dates daygrid">
+      <li
+        *ngFor="let dateObj of dateGallery.firstFrame.dates; trackBy: dateTrackBy"
+        [ngStyle]="{ 'grid-column': dateObj.date.getDay() + 1 }"
+      >
+        <button
+          attr.aria-label="Select {{dateFormatter.format(dateObj.date)}}"
+          type="button"
+          [ngClass]="{ selected: dateObj.isSelected, today: dateObj.isToday }"
+          [disabled]="!dateObj.canBeSelected"
+          (click)="onDateClicked(dateObj)"
+        >
+          <time [dateTime]="dateObj.date.toISOString()">
+            {{ dateObj.date.getDate() }}
+          </time>
+        </button>
+      </li>
+    </ul>
+
+    <div class="bottombar">
+      <button type="button" (click)="closeDialog()">Cancel</button>
+      <button type="button" (click)="dateGallery.today()">Today</button>
+    </div>
+  </div>
+</my-dialog>

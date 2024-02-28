@@ -1,0 +1,33 @@
+.selector-example {
+  width: 512px;
+}
+
+.condiments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 32px;
+}
+
+.condiment {
+  width: 200px;
+  border: blue 1px solid;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.condiment p {
+  text-align: left;
+}
+
+.condiment.selected {
+  background-color: lightblue;
+}
+
+.error {
+  color: red;
+}

@@ -1,0 +1,79 @@
+.calendar-example .calendar-day-grid {
+  /* Is set from within JavaScript based on the visible hours */
+  --width: 0;
+
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(var(--width), minmax(1px, 1fr));
+  grid-template-rows: repeat(20, 30px);
+  row-gap: 8px;
+}
+
+.calendar-example .calendar-day-hour {
+  display: flex;
+  margin-left: -1px;
+  padding-left: 4px;
+  border-left: solid lightgray 1px;
+  cursor: pointer;
+  background-color: white;
+  font-size: 16px;
+}
+
+.calendar-example .calendar-day-current-time {
+  background-color: orangered;
+  width: 1px;
+}
+
+.calendar-example .calendar-day-current-time:hover::after {
+  content: attr(time);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+  width: 62px;
+  height: 32px;
+}
+
+.calendar-example .calendar-day-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.9;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.calendar-example .calendar-day-event button {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.calendar-example .calendar-day-event .text-container {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  display: flex;
+  gap: 4px;
+}
+
+.calendar-example .calendar-day-event .end-time {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.calendar-example .calendar-day-event .drag-indicator {
+  width: 4px;
+  height: 30px;
+}
+
+.calendar-example .calendar-day-event .drag-indicator[draggable="true"] {
+  cursor: col-resize;
+}

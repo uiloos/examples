@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/main.css" />
+    <title>ViewChannel</title>
+  </head>
+  <body>
+    <div class="App">
+      <div class="main">
+        <h1>ViewChannel</h1>
+        <h2>Press the buttons to trigger a modal</h2>
+
+        <button id="pokemonButton">Pick Pokemon</button>
+
+        <button id="carButton">Pick Car</button>
+
+        <button id="planetButton">Destroy Planet</button>
+
+        <p>Tip: hover over flash messages to pause them</p>
+      </div>
+
+      <div class="notifications">
+        <button id="clear-notification" style="display: none;">
+          Clear all
+        </button>
+
+        <p id="notification-empty">No notifications yet</p>
+
+        <div
+          id="notifications-container"
+          role="status"
+          aria-live="polite"
+        ></div>
+      </div>
+    </div>
+
+    <div class="flash-messages">
+      <div
+        id="flash-messages-container"
+        class="flash-messages-container"
+        role="status"
+        aria-live="polite"
+      ></div>
+    </div>
+
+    <div id="modals"></div>
+
+    <div id="confirmation-dialogs"></div>
+
+    <script
+      src="https://unpkg.com/@uiloos/core@1.5.0-alpha.1/dist/uiloos-license-checker-1.5.0-alpha.1.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://unpkg.com/@uiloos/core@1.5.0-alpha.1/dist/uiloos-view-channel-1.5.0-alpha.1.min.js"
+      defer
+    ></script>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
+</html>

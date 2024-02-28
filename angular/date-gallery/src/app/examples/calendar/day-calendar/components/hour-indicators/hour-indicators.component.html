@@ -1,0 +1,11 @@
+<ng-template #template>
+  <li
+    *ngFor="let entry of times"
+    class="calendar-day-hour"
+    aria-hidden
+    [ngStyle]="getStyle(entry)"
+    (click)="onClick($event, entry.date)"
+  >
+    {{ entry.time }}
+  </li>
+</ng-template>

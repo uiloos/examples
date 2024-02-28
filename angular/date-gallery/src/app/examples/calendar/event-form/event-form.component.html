@@ -1,0 +1,57 @@
+  <my-dialog (close)="closeDialog()">
+    <form class="calendar-event-form" (submit)="onSubmit($event)">
+      <b class="calendar-event-form-title">
+        {{ formEvent ? "Edit event" : "Add event" }}
+      </b>
+  
+      <div class="calendar-event-form-field">
+        <label htmlFor="title">Title</label>
+        <input id="title" name="title" [(ngModel)]="title" />
+  
+        <span *ngIf="titleError" class="error">{{ titleError }}</span>
+      </div>
+  
+      <div class="calendar-event-form-field">
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          cols="4"
+          rows="4"
+          [(ngModel)]="description"
+        ></textarea>
+  
+        <span *ngIf="descriptionError" class="error">{{ descriptionError }}</span>
+      </div>
+  
+      <daterange-picker
+        [timeEnabled]="true"
+        [(start)]="startDate"
+        [(end)]="endDate"
+        (validityChanged)="rangeValidChanged($event)"
+        startLabel="Start (mm/dd/yyyy hh:mm)"
+        endLabel="End (mm/dd/yyyy hh:mm)"
+        startErrorLabel="Start"
+        endErrorLabel="End"
+        [required]="true"
+      />
+  
+      <div class="calendar-event-form-field">
+        <label htmlFor="color">Color</label>
+        <input id="color" name="color" type="color" [(ngModel)]="color" />
+  
+        <span *ngIf="colorError" class="error">{{ colorError }}</span>
+      </div>
+  
+      <button type="submit">Save</button>
+    </form>
+  
+    <button
+      *ngIf="formEvent"
+      class="delete-event-button"
+      (click)="deleteButtonClicked()"
+    >
+      Delete event
+    </button>
+  </my-dialog>
+  

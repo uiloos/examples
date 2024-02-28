@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="/main.css" />
+
+    <script
+      src="https://unpkg.com/@uiloos/core@1.5.0/dist/uiloos-license-checker-1.5.0.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/@uiloos/core@1.5.0/dist/uiloos-active-list-1.5.0.min.js"
+      defer
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="/examples/peek-ahead-carousel/peek-ahead-carousel.css"
+    />
+    <script
+      src="/examples/peek-ahead-carousel/peek-ahead-carousel.js"
+      defer
+    ></script>
+
+    <link rel="stylesheet" href="/examples/snap-carousel/snap-carousel.css" />
+    <script src="/examples/snap-carousel/snap-carousel.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="/examples/classic-carousel/classic-carousel.css"
+    />
+    <script src="/examples/classic-carousel/classic-carousel.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="/examples/segmented-button/segmented-button.css"
+    />
+    <script src="/examples/segmented-button/segmented-button.js" defer></script>
+
+    <link rel="stylesheet" href="/examples/tabs/tabs.css" />
+    <script src="/examples/tabs/tabs.js" defer></script>
+
+    <link rel="stylesheet" href="/examples/accordion/accordion.css" />
+    <script src="/examples/accordion/accordion.js" defer></script>
+
+    <link rel="stylesheet" href="/examples/todo-list/todo-list.css" />
+    <script src="/examples/todo-list/todo-list.js" defer></script>
+
+    <link rel="stylesheet" href="/examples/gallery/gallery.css" />
+    <script src="/examples/gallery/gallery.js" defer></script>
+
+    <link rel="stylesheet" href="/examples/timeline/timeline.css" />
+    <script src="/examples/timeline/timeline.js" defer></script>
+
+    <link rel="stylesheet" href="/examples/selector/selector.css" />
+    <script src="/examples/selector/selector.js" defer></script>
+
+    <title>ActiveList vanilla</title>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tabs-container">
+        <a href="#snap-carousel" class="tab active">Snap carousel</a>
+        <a href="#peek-carousel" class="tab">Peek carousel</a>
+        <a href="#classic-carousel" class="tab">Classic carousel</a>
+        <a href="#accordion" class="tab">Accordion</a>
+        <a href="#segmented-button" class="tab">Segmented button</a>
+        <a href="#todo-list" class="tab">Todo list</a>
+        <a href="#image-gallery" class="tab">Image gallery</a>
+        <a href="#timeline" class="tab">Timeline</a>
+        <a href="#selector" class="tab">Selector</a>
+      </div>
+
+      <!-- Snap Carousel-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div>
+          <div id="snap-carousel-progress" class="snap-carousel-progress"></div>
+          <!-- Slides -->
+          <ul id="snap-carousel" class="snap-carousel">
+            <li id="snap-carousel-slide-0" class="slide">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/snow.jpg"
+                alt="image of a snow owl"
+              />
+              <article>
+                <h4>Snow owl</h4>
+                <p>
+                  The snowy owl (Bubo scandiacus), also known as the polar owl,
+                  the white owl and the Arctic owl, is a large, white owl of the
+                  true owl family. Snowy owls are native to the Arctic regions.
+                </p>
+
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@dkphotos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Doug Kelley</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="snap-carousel-slide-1" class="slide">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/tawny.jpg"
+                alt="image of a tawny owl"
+              />
+              <article>
+                <h4>Tawny owl</h4>
+                <p>
+                  The tawny owl (also called the brown owl; Strix aluco) is
+                  commonly found in woodlands across much of Eurasia and North
+                  Africa, and has 11 recognized subspecies.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@kai_wenzel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Kai Wenzel</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="snap-carousel-slide-2" class="slide">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/barn.jpg"
+                alt="image of a barn owl"
+              />
+              <article>
+                <h4>Barn owl</h4>
+                <p>
+                  The barn owl (Tyto alba) is the most widely distributed
+                  species of owl in the world and one of the most widespread of
+                  all species of birds, being found almost everywhere in the
+                  world.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@picsbyjameslee"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >James Lee</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="snap-carousel-slide-3" class="slide">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/burrowing.jpg"
+                alt="image of a burrowing owl"
+              />
+              <article>
+                <h4>Burrowing owl</h4>
+                <p>
+                  The burrowing owl (Athene cunicularia) is a small, long-legged
+                  owl. Burrowing owls nest and roost in burrows, such as those
+                  excavated by prairie dogs.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@rayhennessy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Ray Hennessy</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="snap-carousel-slide-4" class="slide">
+              <img src="/images/hawk.jpg" alt="image of a northern hawk-owl" />
+              <article>
+                <h4>Northern hawk-owl</h4>
+                <p>
+                  The northern hawk-owl or northern hawk owl (Surnia ulula) is a
+                  medium-sized true owl of the northern latitudes. It is one of
+                  the few owls that is neither nocturnal nor crepuscular.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@erik_karits"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Erik Karits</a
+                  >
+                </p>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="description">
+          <p>
+            The example above shows a CSS based snap carousel, it has been
+            enhanced by "uiloos" to move to the next slide by itself via the
+            ActiveList autoPlay feature.
+          </p>
+
+          <p>
+            When the user interacts with the carousel the autoPlay is disabled
+            and the user assumes control of the carousel.
+          </p>
+
+          <p>
+            When you disabled JavaScript carousel will still work, but it will
+            not autoPlay.
+          </p>
+        </div>
+      </div>
+
+      <!-- Peek a-head Carousel-->
+      <div class="tab-content" aria-hidden="false">
+        <div>
+          <div
+            id="peek-ahead-carousel-progress"
+            class="peek-ahead-carousel-progress"
+          ></div>
+          <!-- Slides -->
+          <ul id="peek-ahead-carousel" class="peek-ahead-carousel">
+            <li id="peek-carousel-slide-0" class="slide active">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/snow.jpg"
+                alt="image of a snow owl"
+              />
+              <article>
+                <h4>Snow owl</h4>
+                <p>
+                  The snowy owl (Bubo scandiacus), also known as the polar owl,
+                  the white owl and the Arctic owl, is a large, white owl of the
+                  true owl family. Snowy owls are native to the Arctic regions.
+                </p>
+
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@dkphotos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Doug Kelley</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="peek-carousel-slide-1" class="slide">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/tawny.jpg"
+                alt="image of a tawny owl"
+              />
+              <article>
+                <h4>Tawny owl</h4>
+                <p>
+                  The tawny owl (also called the brown owl; Strix aluco) is
+                  commonly found in woodlands across much of Eurasia and North
+                  Africa, and has 11 recognized subspecies.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@kai_wenzel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Kai Wenzel</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="peek-carousel-slide-2" class="slide">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/barn.jpg"
+                alt="image of a barn owl"
+              />
+              <article>
+                <h4>Barn owl</h4>
+                <p>
+                  The barn owl (Tyto alba) is the most widely distributed
+                  species of owl in the world and one of the most widespread of
+                  all species of birds, being found almost everywhere in the
+                  world.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@picsbyjameslee"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >James Lee</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="peek-carousel-slide-3" class="slide">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/burrowing.jpg"
+                alt="image of a burrowing owl"
+              />
+              <article>
+                <h4>Burrowing owl</h4>
+                <p>
+                  The burrowing owl (Athene cunicularia) is a small, long-legged
+                  owl. Burrowing owls nest and roost in burrows, such as those
+                  excavated by prairie dogs.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@rayhennessy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Ray Hennessy</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="peek-carousel-slide-4" class="slide">
+              <img src="/images/hawk.jpg" alt="image of a northern hawk-owl" />
+              <article>
+                <h4>Northern hawk-owl</h4>
+                <p>
+                  The northern hawk-owl or northern hawk owl (Surnia ulula) is a
+                  medium-sized true owl of the northern latitudes. It is one of
+                  the few owls that is neither nocturnal nor crepuscular.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@erik_karits"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Erik Karits</a
+                  >
+                </p>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="description">
+          <p>
+            This is a variant of the "Snap Carousel" example which shows the
+            user a little bit of the previous and next slides.
+          </p>
+
+          <p>
+            When the user interacts with the carousel the autoPlay is disabled
+            and the user assumes control of the carousel.
+          </p>
+
+          <p>
+            When you disabled JavaScript carousel will still work, but it will
+            not autoPlay.
+          </p>
+        </div>
+      </div>
+
+      <!-- Classic Carousel-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div id="classic-carousel" class="classic-carousel">
+          <!-- Slides -->
+          <ul>
+            <li
+              id="classic-carousel-slide-0"
+              class="slide active"
+              aria-hidden="false"
+            >
+              <img
+                width="1920"
+                height="1280"
+                src="/images/snow.jpg"
+                alt="image of a snow owl"
+              />
+              <article>
+                <h4>Snow owl</h4>
+                <p>
+                  The snowy owl (Bubo scandiacus), also known as the polar owl,
+                  the white owl and the Arctic owl, is a large, white owl of the
+                  true owl family. Snowy owls are native to the Arctic regions.
+                </p>
+
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@dkphotos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Doug Kelley</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="classic-carousel-slide-1" class="slide" aria-hidden="true">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/tawny.jpg"
+                alt="image of a tawny owl"
+              />
+              <article>
+                <h4>Tawny owl</h4>
+                <p>
+                  The tawny owl (also called the brown owl; Strix aluco) is
+                  commonly found in woodlands across much of Eurasia and North
+                  Africa, and has 11 recognized subspecies.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@kai_wenzel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Kai Wenzel</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="classic-carousel-slide-2" class="slide" aria-hidden="true">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/barn.jpg"
+                alt="image of a barn owl"
+              />
+              <article>
+                <h4>Barn owl</h4>
+                <p>
+                  The barn owl (Tyto alba) is the most widely distributed
+                  species of owl in the world and one of the most widespread of
+                  all species of birds, being found almost everywhere in the
+                  world.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@picsbyjameslee"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >James Lee</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="classic-carousel-slide-3" class="slide" aria-hidden="true">
+              <img
+                width="1920"
+                height="1280"
+                src="/images/burrowing.jpg"
+                alt="image of a burrowing owl"
+              />
+              <article>
+                <h4>Burrowing owl</h4>
+                <p>
+                  The burrowing owl (Athene cunicularia) is a small, long-legged
+                  owl. Burrowing owls nest and roost in burrows, such as those
+                  excavated by prairie dogs.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@rayhennessy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Ray Hennessy</a
+                  >
+                </p>
+              </article>
+            </li>
+            <li id="classic-carousel-slide-4" class="slide" aria-hidden="true">
+              <img src="/images/hawk.jpg" alt="image of a northern hawk-owl" />
+              <article>
+                <h4>Northern hawk-owl</h4>
+                <p>
+                  The northern hawk-owl or northern hawk owl (Surnia ulula) is a
+                  medium-sized true owl of the northern latitudes. It is one of
+                  the few owls that is neither nocturnal nor crepuscular.
+                </p>
+                <p>
+                  Photo by
+                  <a
+                    href="https://unsplash.com/@erik_karits"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Erik Karits</a
+                  >
+                </p>
+              </article>
+            </li>
+          </ul>
+
+          <!-- Progress -->
+          <ul class="progress">
+            <li>
+              <button id="classic-carousel-button-0" class="active"></button>
+            </li>
+            <li>
+              <button id="classic-carousel-button-1"></button>
+            </li>
+            <li>
+              <button id="classic-carousel-button-2"></button>
+            </li>
+            <li>
+              <button id="classic-carousel-button-3"></button>
+            </li>
+            <li>
+              <button id="classic-carousel-button-4"></button>
+            </li>
+          </ul>
+
+          <!-- Controls -->
+          <div class="controls">
+            <div class="controls-container">
+              <button id="classic-carousel-prev" type="button">‹</button>
+
+              <button id="classic-carousel-next" type="button">›</button>
+            </div>
+          </div>
+
+          <div aria-live="polite" aria-atomic="true" class="visually-hidden">
+            Owl <span id="carousel-current-active">1</span> of 5
+          </div>
+        </div>
+
+        <div class="description">
+          <p>
+            This example shows a classic carousel, it is classic because it does
+            not use modern CSS (with snap points) to create the carousel.
+          </p>
+
+          <p>
+            Instead it uses JavaScript to create the carousel, which is why it
+            does not work when JavaScript is disabled.
+          </p>
+
+          <p>
+            The user can either use the chevron buttons to navigate between the
+            slides, or the user can click on the progress indicators. Once the
+            user takes control of the carousel it will stop auto playing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordion-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="accordion-example">
+          <details>
+            <summary>What is the meaning of life?</summary>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              commodi tenetur dignissimos maxime reprehenderit quam hic,
+              molestiae nisi dolorem nihil dolor illum asperiores incidunt
+              distinctio quod modi, corporis quae neque!
+            </p>
+          </details>
+
+          <details open="open">
+            <summary>How many eggs are in the basket?</summary>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              commodi tenetur dignissimos maxime reprehenderit quam hic,
+              molestiae nisi dolorem nihil dolor illum asperiores incidunt
+              distinctio quod modi, corporis quae neque!
+            </p>
+          </details>
+
+          <details>
+            <summary>Who dunnit?</summary>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              commodi tenetur dignissimos maxime reprehenderit quam hic,
+              molestiae nisi dolorem nihil dolor illum asperiores incidunt
+              distinctio quod modi, corporis quae neque!
+            </p>
+          </details>
+        </div>
+
+        <div class="description">
+          <p>
+            This example shows an accordion component used as an FAQ.
+          </p>
+
+          <p>
+            The "details" en "summary" HTML elements are used so it works
+            without JavaScript enabled.
+          </p>
+
+          <p>
+            "uiloos" enhances the elements by only allowing one "details" to be
+            open at a single time.
+          </p>
+
+          <p>
+            In the future you will not need "uiloos" to do this for you, as a
+            "name" attribute on the "details" element is going to be introduced.
+            When more than one "details" share the same "name" attribute only
+            one item is allowed to be opened at the same time.
+          </p>
+
+          <p>
+            When it has been released you should only use "uiloos" for this
+            usecase if you want to support older browsers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Segmented button-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="segment-example">
+          <div class="segment-container">
+            <button onclick="left()" class="active">Left</button>
+            <button onclick="center()">Center</button>
+            <button onclick="right()">Right</button>
+          </div>
+
+          <p id="segment-example-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+            commodi tenetur dignissimos maxime reprehenderit quam hic, molestiae
+            nisi dolorem nihil dolor illum asperiores incidunt distinctio quod
+            modi, corporis quae neque!
+          </p>
+
+          <script defer="true">
+            const pEl = document.getElementById("segment-example-text");
+
+            function left() {
+              pEl.style.textAlign = "left";
+            }
+
+            function center() {
+              pEl.style.textAlign = "center";
+            }
+
+            function right() {
+              pEl.style.textAlign = "right";
+            }
+          </script>
+        </div>
+
+        <div class="description">
+          <p>
+            A segmented button only allows one item to be active at the same
+            time, which is a perfect usecase for the ActiveList.
+          </p>
+        </div>
+      </div>
+
+      <!-- Todo list-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="todo-example">
+          <form class="todo-form">
+            <div>
+              <label>
+                New todo
+                <input id="new-todo-input" name="todo" required />
+              </label>
+            </div>
+
+            <button type="submit">Add todo</button>
+          </form>
+
+          <h1>Todo</h1>
+
+          <div class="todos">
+            <div class="todo-item">
+              <label>
+                <input type="checkbox" />
+                Eggs
+              </label>
+
+              <div class="buttons">
+                <button>↑</button>
+                <button>↓</button>
+              </div>
+            </div>
+            <div class="todo-item">
+              <label>
+                <input type="checkbox" />
+                Leeks
+              </label>
+
+              <div class="buttons">
+                <button>↑</button>
+                <button>↓</button>
+              </div>
+            </div>
+            <div class="todo-item">
+              <label>
+                <input type="checkbox" />
+                Milk
+              </label>
+
+              <div class="buttons">
+                <button>↑</button>
+                <button>↓</button>
+              </div>
+            </div>
+            <div class="todo-item">
+              <label>
+                <input type="checkbox" />
+                Strawberries
+              </label>
+
+              <div class="buttons">
+                <button>↑</button>
+                <button>↓</button>
+              </div>
+            </div>
+            <div class="todo-item">
+              <label>
+                <input type="checkbox" />
+                Apples
+              </label>
+
+              <div class="buttons">
+                <button>↑</button>
+                <button>↓</button>
+              </div>
+            </div>
+            <div class="todo-item">
+              <label>
+                <input type="checkbox" />
+                Potatoes
+              </label>
+
+              <div class="buttons">
+                <button>↑</button>
+                <button>↓</button>
+              </div>
+            </div>
+          </div>
+
+          <template id="new-todo-template">
+            <div class="todo-item">
+              <label>
+                <input type="checkbox" />
+                <span id="todo-text"></span>
+              </label>
+
+              <div class="buttons">
+                <button>↑</button>
+                <button>↓</button>
+              </div>
+            </div>
+          </template>
+
+          <small>
+            <span id="no-finished">0</span> /
+            <span id="no-total">6</span> todo's are done
+          </small>
+        </div>
+
+        <div class="description">
+          <p>
+            This todo example shows that multiple items can be 'active' at the
+            same time in the ActiveList.
+          </p>
+
+          <p>
+            It also demonstrates how easy it is to move items around in the
+            list. Try drag and dropping the todos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Gallery-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="gallery-example">
+          <div class="gallery-selected"></div>
+
+          <ul class="gallery-items">
+            <li>
+              <button>
+                <img
+                  width="1920"
+                  height="1280"
+                  src="/images/snow.jpg"
+                  alt="image of a snow owl"
+                />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img
+                  width="1920"
+                  height="1280"
+                  src="/images/tawny.jpg"
+                  alt="image of a snow owl"
+                />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img
+                  width="1920"
+                  height="1280"
+                  src="/images/barn.jpg"
+                  alt="image of a barn owl"
+                />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img
+                  width="1920"
+                  height="1280"
+                  src="/images/burrowing.jpg"
+                  alt="image of a burrowing owl"
+                />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img
+                  width="1920"
+                  height="1280"
+                  src="/images/hawk.jpg"
+                  alt="image of a northern hawk-owl"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="description">
+          <p>
+            The gallery is popular on websites that have a lot of images to
+            show, but do not want to single out a single image.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline-->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="timeline">
+          <ol class="timeline-list">
+            <li class="timeline-item current">
+              <button>
+                <span class="timeline-item-label">jQuery</span>
+                <span class="timeline-item-time">August 2006</span>
+              </button>
+            </li>
+
+            <li class="timeline-item next">
+              <button>
+                <span class="timeline-item-label">Backbone</span>
+                <span class="timeline-item-time">October 2010</span>
+              </button>
+            </li>
+
+            <li class="timeline-item">
+              <button>
+                <span class="timeline-item-label">AngularJS</span>
+                <span class="timeline-item-time">October 2010</span>
+              </button>
+            </li>
+
+            <li class="timeline-item">
+              <button>
+                <span class="timeline-item-label">Ember.js</span>
+                <span class="timeline-item-time">December 2011</span>
+              </button>
+            </li>
+
+            <li class="timeline-item">
+              <button>
+                <span class="timeline-item-label">React</span>
+                <span class="timeline-item-time">May 2013</span>
+              </button>
+            </li>
+
+            <li class="timeline-item">
+              <button>
+                <span class="timeline-item-label">Vue</span>
+                <span class="timeline-item-time">February 2014</span>
+              </button>
+            </li>
+
+            <li class="timeline-item">
+              <button>
+                <span class="timeline-item-label">Angular</span>
+                <span class="timeline-item-time">September 2016</span>
+              </button>
+            </li>
+
+            <li class="timeline-item">
+              <button>
+                <span class="timeline-item-label">Svelte</span>
+                <span class="timeline-item-time">November 2016</span>
+              </button>
+            </li>
+          </ol>
+
+          <div id="timeline-content-0" class="timeline-content">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>jQuery</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              jQuery is a fast, small, and feature-rich JavaScript library. It
+              makes things like HTML document traversal and manipulation, event
+              handling, animation, and Ajax much simpler with an easy-to-use API
+              that works across a multitude of browsers. With a combination of
+              versatility and extensibility, jQuery has changed the way that
+              millions of people write JavaScript.
+            </p>
+          </div>
+
+          <div id="timeline-content-1" class="timeline-content visually-hidden">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>Backbone</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              Backbone.js gives structure to web applications by providing
+              models with key-value binding and custom events, collections with
+              a rich API of enumerable functions, views with declarative event
+              handling, and connects it all to your existing API over a RESTful
+              JSON interface.
+            </p>
+          </div>
+
+          <div id="timeline-content-2" class="timeline-content visually-hidden">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>AngularJS</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              AngularJS is a toolset for building the framework most suited to
+              your application development. It is fully extensible and works
+              well with other libraries.
+            </p>
+          </div>
+
+          <div id="timeline-content-3" class="timeline-content visually-hidden">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>Ember</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              Ember.js is a productive, battle-tested JavaScript framework for
+              building modern web applications. It includes everything you need
+              to build rich UIs that work on any device.
+            </p>
+          </div>
+
+          <div id="timeline-content-4" class="timeline-content visually-hidden">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>React</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              React makes it painless to create interactive UIs. Design simple
+              views for each state in your application, and React will
+              efficiently update and render just the right components when your
+              data changes.
+            </p>
+          </div>
+
+          <div id="timeline-content-5" class="timeline-content visually-hidden">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>Vue</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              An approachable, performant and versatile framework for building
+              web user interfaces.
+            </p>
+          </div>
+
+          <div id="timeline-content-6" class="timeline-content visually-hidden">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>Angular</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              Angular is a platform for building mobile and desktop web
+              applications. Join the community of millions of developers who
+              build compelling user interfaces.
+            </p>
+          </div>
+
+          <div id="timeline-content-7" class="timeline-content visually-hidden">
+            <div class="timeline-content-controls">
+              <button class="timeline-previous" type="button">‹</button>
+
+              <h1>Svelte</h1>
+
+              <button class="timeline-next" type="button">›</button>
+            </div>
+
+            <p>
+              Svelte is a radical new approach to building user interfaces.
+              Whereas traditional frameworks like React and Vue do the bulk of
+              their work in the browser, Svelte shifts that work into a compile
+              step that happens when you build your app.
+            </p>
+          </div>
+        </div>
+
+        <div class="description">
+          <p>
+            The idea behind this example is to show that "uiloos" is aware of
+            the position an item has within the ActiveList. "uiloos" can tell
+            you what the next item, previous item and what first and last items
+            are.
+          </p>
+
+          <p>
+            You can then use this information to set different CSS classes for
+            each item.
+          </p>
+        </div>
+      </div>
+
+      <!-- Condiment picker -->
+      <div class="visually-hidden tab-content" aria-hidden="true">
+        <div class="selector-example">
+          <h2>
+            You have selected <span id="condiments-length">0</span> condiments
+          </h2>
+          <div id="active-condiments" class="condiments"></div>
+
+          <h2>Please select up to three condiments</h2>
+          <span id="max-condiments-message" class="error visually-hidden">
+            You have selected the max number of condiments
+          </span>
+          <div class="condiments">
+            <button class="condiment" data-value="1.44">
+              <h4>Bacon</h4>
+              <p>Our bacon is crispy and delicious</p>
+              <b>$1.44</b>
+            </button>
+            <button class="condiment" data-value="2.05">
+              <h4>Pickles</h4>
+              <p>Pickeles sweet and a little sour</p>
+              <b>$2.05</b>
+            </button>
+            <button class="condiment" data-value="4.99">
+              <h4>Gorgonzola</h4>
+              <p>A smelly cheese not for the faint of heart</p>
+              <b>$4.99</b>
+            </button>
+            <button class="condiment" data-value="0.95">
+              <h4>Cheddar</h4>
+              <p>A simple classic cheddar cheese</p>
+              <b>$0.95</b>
+            </button>
+            <button class="condiment" data-value="2.79">
+              <h4>Hamburger</h4>
+              <p>Put another hamburger on there for double the fun</p>
+              <b>$2.79</b>
+            </button>
+            <button class="condiment" data-value="0.29">
+              <h4>Egg</h4>
+              <p>Put an egg on it</p>
+              <b>$0.29</b>
+            </button>
+            <button class="condiment" data-value="1.49">
+              <h4>Argula</h4>
+              <p>A nutty tasting salad</p>
+              <b>$1.49</b>
+            </button>
+          </div>
+
+          <h2>Cost: <span id="condiments-cost">$0</span></h2>
+        </div>
+
+        <div class="description">
+          <p>
+            This example shows that via "maxActivationLimit" you can limit the
+            amount of content / items that can be active.
+          </p>
+
+          <p>
+            By setting "maxActivationLimitBehavior" to "ignore" whenever more
+            items are activated than the "maxActivationLimit" they are simply
+            ignored.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

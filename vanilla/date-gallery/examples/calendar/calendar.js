@@ -3,7 +3,7 @@
   dates, using date-fns here, but you could also use Luxon, dayjs or 
   Moment.js
 */
-import { isValid } from "https://unpkg.com/date-fns@3.2.0/isValid.mjs";
+import { isValid } from "/node_modules/date-fns/isValid.mjs";
 import { generateEvents, formatDateForInput, eventId } from "./events.js";
 import { isoFormatter } from "../formatters.js";
 import { renderMonthCalendar, writeMonthTemplates } from "./month.js";

@@ -9,5 +9,10 @@
   },
   "devDependencies": {
     "serve": "14.2.1"
+  },
+  "dependencies": {
+    "@uiloos/core": "1.6.0",
+    "@uiloos/alpine": "1.6.0",
+    "alpinejs": "3.13.5"
   }
 }

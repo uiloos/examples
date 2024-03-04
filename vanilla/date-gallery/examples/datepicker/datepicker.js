@@ -3,8 +3,8 @@
   dates, using date-fns here, but you could also use Luxon, dayjs or 
   Moment.js
 */
-import { parse } from "https://unpkg.com/date-fns@3.2.0/parse.mjs";
-import { isValid } from "https://unpkg.com/date-fns@3.2.0/isValid.mjs";
+import { parse } from "/node_modules/date-fns/parse.mjs";
+import { isValid } from "/node_modules/date-fns/isValid.mjs";
 import { dateFormatter, timeFormatter, monthFormatter } from "../formatters.js";
 
 /*

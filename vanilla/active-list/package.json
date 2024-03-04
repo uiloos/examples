@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "serve": "14.2.1"
+  },
+  "dependencies": {
+    "@uiloos/core": "1.6.0"
   }
 }
